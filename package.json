@@ -9,9 +9,11 @@
     },
     "scripts": {
         "start": "node server.js",
-        "share": "ssh -o \"StrictHostKeyChecking=no\" -R 80:127.0.0.1:3000 nokey@localhost.run"
+        "share": "ssh -o \"StrictHostKeyChecking=no\" -R 80:127.0.0.1:3000 nokey@localhost.run",
+        "supabase:seed": "node scripts/export-supabase-seed.js"
     },
     "dependencies": {
+        "@supabase/supabase-js": "2.49.8",
         "express": "^4.21.2"
     },
     "devDependencies": {

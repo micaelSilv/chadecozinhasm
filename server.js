@@ -1,24 +1,20 @@
 const express = require("express");
-const fs = require("fs/promises");
 const os = require("os");
-const path = require("path");
+const { confirmGift, getAllGifts, MissingSupabaseConfigError } = require("./lib/gifts-store");
 
 const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || "0.0.0.0";
-const bundledDataFile = path.join(__dirname, "data", "gifts.json");
-const dataDirectory = process.env.DATA_DIR || path.join(__dirname, "data");
-const dataFile = process.env.DATA_FILE || path.join(dataDirectory, "gifts.json");
 
 app.use(express.json());
 app.use(express.static(__dirname));
 
 app.get("/api/gifts", async (_request, response) => {
     try {
-        const gifts = await readGifts();
+        const gifts = await getAllGifts();
         response.json({ gifts });
-    } catch {
-        response.status(500).json({ message: "Nao foi possivel carregar a lista de presentes." });
+    } catch (error) {
+        response.status(500).json({ message: getErrorMessage(error, "Nao foi possivel carregar a lista de presentes.") });
     }
 });
 
@@ -30,30 +26,22 @@ app.post("/api/confirm", async (request, response) => {
     }
 
     try {
-        const gifts = await readGifts();
-        const selectedGift = gifts.find((gift) => gift.id === giftId);
+        const gifts = await confirmGift({
+            giftId,
+            guestName,
+            guestPhone
+        });
 
-        if (!selectedGift) {
-            return response.status(404).json({ message: "Esse presente nao foi encontrado." });
-        }
-
-        if (selectedGift.reservedBy) {
-            return response.status(409).json({
-                message: "Esse presente ja foi confirmado por outro convidado.",
-                gifts
+        return response.json({ gifts, message: "Presente confirmado com sucesso." });
+    } catch (error) {
+        if (error.statusCode) {
+            return response.status(error.statusCode).json({
+                message: error.message,
+                ...(error.gifts ? { gifts: error.gifts } : {})
             });
         }
 
-        selectedGift.reservedBy = {
-            guestName: guestName.trim(),
-            guestPhone: guestPhone.trim(),
-            confirmedAt: new Date().toISOString()
-        };
-
-        await writeGifts(gifts);
-        return response.json({ gifts, message: "Presente confirmado com sucesso." });
-    } catch {
-        return response.status(500).json({ message: "Nao foi possivel salvar a confirmacao." });
+        return response.status(500).json({ message: getErrorMessage(error, "Nao foi possivel salvar a confirmacao.") });
     }
 });
 
@@ -66,28 +54,6 @@ app.listen(port, host, () => {
 
     console.log("Para acesso publico pela internet, use: npm run share");
 });
-
-async function readGifts() {
-    await ensureDataFile();
-    const file = await fs.readFile(dataFile, "utf8");
-    return JSON.parse(file);
-}
-
-async function writeGifts(gifts) {
-    await fs.mkdir(path.dirname(dataFile), { recursive: true });
-    await fs.writeFile(dataFile, JSON.stringify(gifts, null, 4));
-}
-
-async function ensureDataFile() {
-    await fs.mkdir(path.dirname(dataFile), { recursive: true });
-
-    try {
-        await fs.access(dataFile);
-    } catch {
-        const seedFile = await fs.readFile(bundledDataFile, "utf8");
-        await fs.writeFile(dataFile, seedFile);
-    }
-}
 
 function getNetworkAddresses() {
     const interfaces = os.networkInterfaces();
@@ -106,4 +72,12 @@ function getNetworkAddresses() {
     }
 
     return addresses;
+}
+
+function getErrorMessage(error, fallbackMessage) {
+    if (error instanceof MissingSupabaseConfigError) {
+        return error.message;
+    }
+
+    return fallbackMessage;
 }
