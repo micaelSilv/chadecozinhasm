@@ -25,7 +25,7 @@ module.exports = async (request, response) => {
 
         const message = error instanceof MissingSupabaseConfigError
             ? error.message
-            : "Nao foi possivel salvar a confirmacao.";
+            : error.message || "Nao foi possivel salvar a confirmacao.";
 
         return response.status(500).json({ message });
     }

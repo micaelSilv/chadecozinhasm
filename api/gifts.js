@@ -12,7 +12,7 @@ module.exports = async (request, response) => {
     } catch (error) {
         const message = error instanceof MissingSupabaseConfigError
             ? error.message
-            : "Nao foi possivel carregar a lista de presentes.";
+            : error.message || "Nao foi possivel carregar a lista de presentes.";
 
         return response.status(500).json({ message });
     }
