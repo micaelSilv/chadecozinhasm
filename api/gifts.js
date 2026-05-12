@@ -1,4 +1,4 @@
-const { getAllGifts, MissingSupabaseConfigError } = require("../lib/gifts-store");
+const { getAllGifts, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("../lib/gifts-store");
 
 module.exports = async (request, response) => {
     if (request.method !== "GET") {
@@ -10,7 +10,7 @@ module.exports = async (request, response) => {
         const gifts = await getAllGifts();
         return response.status(200).json({ gifts });
     } catch (error) {
-        const message = error instanceof MissingSupabaseConfigError
+        const message = error instanceof MissingSupabaseConfigError || error instanceof InvalidSupabaseUrlError
             ? error.message
             : error.message || "Nao foi possivel carregar a lista de presentes.";
 

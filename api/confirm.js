@@ -1,4 +1,4 @@
-const { confirmGift, MissingSupabaseConfigError } = require("../lib/gifts-store");
+const { confirmGift, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("../lib/gifts-store");
 
 module.exports = async (request, response) => {
     if (request.method !== "POST") {
@@ -23,7 +23,7 @@ module.exports = async (request, response) => {
             });
         }
 
-        const message = error instanceof MissingSupabaseConfigError
+        const message = error instanceof MissingSupabaseConfigError || error instanceof InvalidSupabaseUrlError
             ? error.message
             : error.message || "Nao foi possivel salvar a confirmacao.";
 
