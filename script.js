@@ -11,6 +11,65 @@ const formFeedback = document.querySelector("#form-feedback");
 
 let selectedGiftId = null;
 let giftItems = [];
+const giftImageMap = {
+    "assadeira-redonda": "lista_presentes_imagens_reais/imagens/01_assadeira_redonda.jpg",
+    "assadeira-retangular": "lista_presentes_imagens_reais/imagens/02_assadeira_retangular.jpg",
+    "assadeira-pudim": "lista_presentes_imagens_reais/imagens/03_assadeira_pudim.jpg",
+    "assadeira-pizza": "lista_presentes_imagens_reais/imagens/04_assadeira_pizza.jpg",
+    boleira: "lista_presentes_imagens_reais/imagens/05_boleira.jpg",
+    "bule-chaleira": "lista_presentes_imagens_reais/imagens/06_bule_chaleira.jpg",
+    "escorredor-louca": "lista_presentes_imagens_reais/imagens/07_escorredor_de_louca.jpg",
+    "garrafa-cafe": "lista_presentes_imagens_reais/imagens/08_garrafa_de_cafe.jpg",
+    jarra: "lista_presentes_imagens_reais/imagens/09_jarra.jpg",
+    "jogo-americano": "lista_presentes_imagens_reais/imagens/10_jogo_americano.jpg",
+    "jogo-copos": "lista_presentes_imagens_reais/imagens/11_jogo_de_copos.jpg",
+    "jogo-jantar": "lista_presentes_imagens_reais/imagens/12_jogo_de_jantar.jpg",
+    "jogo-panela": "lista_presentes_imagens_reais/imagens/13_jogo_de_panela.jpg",
+    "jogo-pratos": "lista_presentes_imagens_reais/imagens/14_jogo_de_pratos.jpg",
+    "jogo-sobremesa": "lista_presentes_imagens_reais/imagens/15_jogo_de_sobremesa.jpg",
+    "jogo-tacas": "lista_presentes_imagens_reais/imagens/16_jogo_de_tacas.jpg",
+    "jogo-talheres": "lista_presentes_imagens_reais/imagens/17_jogo_de_talheres.jpg",
+    "jogo-xicaras": "lista_presentes_imagens_reais/imagens/18_jogo_de_xicaras.jpg",
+    "kit-canecoes": "lista_presentes_imagens_reais/imagens/19_kit_de_canecoes.jpg",
+    "kit-faca": "lista_presentes_imagens_reais/imagens/20_kit_de_utensilios_de_cozinha.jpg",
+    "kit-frigideiras": "lista_presentes_imagens_reais/imagens/21_kit_frigideiras.jpg",
+    "kit-pia": "lista_presentes_imagens_reais/imagens/22_kit_de_pia.jpg",
+    "kit-talheres-utensilios": "lista_presentes_imagens_reais/imagens/23_kit_de_talheres_utensilios.jpg",
+    marinex: "lista_presentes_imagens_reais/imagens/24_marinex.jpg",
+    "panela-pressao": "lista_presentes_imagens_reais/imagens/25_panela_de_pressao.jpg",
+    "panos-prato": "lista_presentes_imagens_reais/imagens/26_panos_de_prato.jpg",
+    "panela-pipoqueira": "lista_presentes_imagens_reais/imagens/27_panela_pipoqueira.jpg",
+    "porta-temperos": "lista_presentes_imagens_reais/imagens/28_porta_temperos.jpg",
+    "potes-arroz-feijao": "lista_presentes_imagens_reais/imagens/29_potes_de_mantimentos.jpg",
+    "potes-hermeticos": "lista_presentes_imagens_reais/imagens/30_potes_hermeticos.jpg",
+    "tabua-carne": "lista_presentes_imagens_reais/imagens/31_tabua_de_carne.jpg",
+    "tigelas-bowls": "lista_presentes_imagens_reais/imagens/32_tigelas_bowls.jpg",
+    aspirador: "lista_presentes_imagens_reais/imagens/33_aspirador.jpg",
+    batedeira: "lista_presentes_imagens_reais/imagens/34_batedeira.jpg",
+    ferro: "lista_presentes_imagens_reais/imagens/35_ferro.jpg",
+    liquidificador: "lista_presentes_imagens_reais/imagens/36_liquidificador.jpg",
+    mixer: "lista_presentes_imagens_reais/imagens/37_mixer.jpg",
+    multiprocessador: "lista_presentes_imagens_reais/imagens/38_multiprocessador.jpg",
+    sanduicheira: "lista_presentes_imagens_reais/imagens/39_sanduicheira.jpg",
+    almofadas: "lista_presentes_imagens_reais/imagens/40_almofadas.jpg",
+    cortinas: "lista_presentes_imagens_reais/imagens/41_cortinas.jpg",
+    edredom: "lista_presentes_imagens_reais/imagens/42_edredom.jpg",
+    "lencol-fronha": "lista_presentes_imagens_reais/imagens/43_lencol_e_fronha.jpg",
+    passadeira: "lista_presentes_imagens_reais/imagens/44_passadeira.jpg",
+    tapetes: "lista_presentes_imagens_reais/imagens/45_tapetes.jpg",
+    "tapetes-banheiro": "lista_presentes_imagens_reais/imagens/46_tapetes_de_banheiro.jpg",
+    toalhas: "lista_presentes_imagens_reais/imagens/47_toalhas.jpg",
+    "toalha-mesa": "lista_presentes_imagens_reais/imagens/48_toalha_de_mesa.jpg",
+    "toalha-rosto": "lista_presentes_imagens_reais/imagens/49_toalha_de_rosto.jpg",
+    travesseiros: "lista_presentes_imagens_reais/imagens/50_travesseiros.jpg",
+    "kit-banheiro": "lista_presentes_imagens_reais/imagens/51_kit_de_banheiro.jpg",
+    "lixo-banheiro": "lista_presentes_imagens_reais/imagens/52_lixo_de_banheiro.jpg",
+    "kit-ferramentas": "lista_presentes_imagens_reais/imagens/53_kit_de_ferramentas.jpg",
+    "tabua-passar": "lista_presentes_imagens_reais/imagens/54_tabua_de_passar_roupa.jpg",
+    bacias: "lista_presentes_imagens_reais/imagens/55_bacias.jpg",
+    baldes: "lista_presentes_imagens_reais/imagens/56_baldes.jpg",
+    mop: "lista_presentes_imagens_reais/imagens/57_mop.jpg"
+};
 
 loadGiftList();
 
@@ -168,43 +227,5 @@ function setFeedback(type, message) {
     formFeedback.classList.add(type);
 }
 function getGiftImage(gift) {
-    const title = `${gift.name} ${gift.category}`.toLowerCase();
-
-    if (title.includes("toalha") || title.includes("banheiro") || title.includes("rosto")) {
-        return "IMGS/produtos/kit-toalhas.jpg";
-    }
-
-    if (title.includes("edredom") || title.includes("lencol") || title.includes("fronha") || title.includes("travesseiro")) {
-        return "IMGS/produtos/edredom.jpg";
-    }
-
-    if (title.includes("almofada") || title.includes("cortina") || title.includes("tapete") || title.includes("passadeira")) {
-        return "IMGS/produtos/almofadas.jpg";
-    }
-
-    if (title.includes("lixo") || title.includes("pia") || title.includes("escorredor") || title.includes("balde") || title.includes("mop") || title.includes("bacia")) {
-        return "IMGS/produtos/lixeira.jpg";
-    }
-
-    if (title.includes("talher") || title.includes("faca")) {
-        return "IMGS/produtos/faqueiro.jpg";
-    }
-
-    if (title.includes("prato") || title.includes("jantar") || title.includes("sobremesa") || title.includes("taca") || title.includes("copo") || title.includes("xicara") || title.includes("jarra") || title.includes("americano") || title.includes("boleira")) {
-        return "IMGS/produtos/jogo-pratos.jpg";
-    }
-
-    if (title.includes("panela") || title.includes("assadeira") || title.includes("frigideira") || title.includes("marinex") || title.includes("pipoqueira") || title.includes("bule") || title.includes("chaleira") || title.includes("tempero") || title.includes("tigela") || title.includes("bowl") || title.includes("tabua") || title.includes("canec")) {
-        return "IMGS/produtos/kit-panelas.jpg";
-    }
-
-    if (title.includes("caf") || title.includes("garrafa")) {
-        return "IMGS/produtos/aparelho-jantar.jpg";
-    }
-
-    if (title.includes("aspirador") || title.includes("batedeira") || title.includes("ferro") || title.includes("liquidificador") || title.includes("mixer") || title.includes("multiprocessador") || title.includes("sanduicheira") || title.includes("passar") || title.includes("ferramenta")) {
-        return "IMGS/produtos/kit-panelas.jpg";
-    }
-
-    return gift.image || "IMGS/produtos/jogo-cama.jpg";
+    return giftImageMap[gift.id] || gift.image || "IMGS/Apoidos_Pilar.jpeg";
 }

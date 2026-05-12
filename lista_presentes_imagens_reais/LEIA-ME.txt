@@ -1,0 +1,5 @@
+Lista de presentes - imagens reais representativas
+
+A pasta contém uma imagem em JPG para cada item da lista, em formato padronizado 900x900, além de um index.html para visualizar em grade.
+Observação: algumas fotos são representativas do tipo de item, não necessariamente de uma marca ou modelo específico.
+O item "kit de faca" foi substituído por "kit de utensílios de cozinha" para manter a lista focada em itens domésticos gerais.
