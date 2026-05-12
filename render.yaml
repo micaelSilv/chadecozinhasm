@@ -2,15 +2,9 @@ services:
   - type: web
     name: chadecozinhasm
     runtime: node
-    plan: starter
+    plan: free
     buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: DATA_DIR
-        value: /var/data
-    disk:
-      name: chadecozinhasm-data
-      mountPath: /var/data
-      sizeGB: 1
