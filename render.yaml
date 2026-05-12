@@ -10,7 +10,7 @@ services:
         value: production
       - key: DATA_DIR
         value: /var/data
-    disks:
-      - name: chadecozinhasm-data
-        mountPath: /var/data
-        sizeGB: 1
+    disk:
+      name: chadecozinhasm-data
+      mountPath: /var/data
+      sizeGB: 1
