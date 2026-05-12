@@ -1,0 +1,20 @@
+{
+    "name": "site-cha-de-cozinha",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Lista de presentes para cha de cozinha com confirmacao compartilhada.",
+    "main": "server.js",
+    "engines": {
+        "node": ">=18"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "share": "ssh -o \"StrictHostKeyChecking=no\" -R 80:127.0.0.1:3000 nokey@localhost.run"
+    },
+    "dependencies": {
+        "express": "^4.21.2"
+    },
+    "devDependencies": {
+        "localtunnel": "^2.0.2"
+    }
+}

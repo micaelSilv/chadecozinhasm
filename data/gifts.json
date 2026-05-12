@@ -1,0 +1,458 @@
+[
+    {
+        "id": "assadeira-redonda",
+        "category": "Cozinha",
+        "name": "Assadeira redonda",
+        "price": 50,
+        "detail": "Forma redonda para bolos, tortas e receitas assadas.",
+        "reservedBy": null
+    },
+    {
+        "id": "assadeira-retangular",
+        "category": "Cozinha",
+        "name": "Assadeira retangular",
+        "price": 60,
+        "detail": "Forma retangular para bolos, carnes, massas e preparos no forno.",
+        "reservedBy": null
+    },
+    {
+        "id": "assadeira-pudim",
+        "category": "Cozinha",
+        "name": "Assadeira pudim",
+        "price": 40,
+        "detail": "Forma com furo central, ideal para pudins e bolos.",
+        "reservedBy": null
+    },
+    {
+        "id": "assadeira-pizza",
+        "category": "Cozinha",
+        "name": "Assadeira pizza",
+        "price": 45,
+        "detail": "Forma baixa e redonda para assar pizzas e massas.",
+        "reservedBy": null
+    },
+    {
+        "id": "boleira",
+        "category": "Mesa",
+        "name": "Boleira",
+        "price": 70,
+        "detail": "Suporte ou recipiente para armazenar e servir bolos.",
+        "reservedBy": null
+    },
+    {
+        "id": "bule-chaleira",
+        "category": "Cozinha",
+        "name": "Bule/Chaleira",
+        "price": 80,
+        "detail": "Utensílio para aquecer ou servir água, chá e café.",
+        "reservedBy": null
+    },
+    {
+        "id": "escorredor-louca",
+        "category": "Casa",
+        "name": "Escorredor de louça",
+        "price": 90,
+        "detail": "Item para organizar pratos, copos e talheres após a lavagem.",
+        "reservedBy": null
+    },
+    {
+        "id": "garrafa-cafe",
+        "category": "Mesa",
+        "name": "Garrafa de café",
+        "price": 90,
+        "detail": "Garrafa térmica para manter café ou bebidas quentes por mais tempo.",
+        "reservedBy": null
+    },
+    {
+        "id": "jarra",
+        "category": "Mesa",
+        "name": "Jarra",
+        "price": 40,
+        "detail": "Recipiente para servir água, sucos ou outras bebidas.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-americano",
+        "category": "Mesa",
+        "name": "Jogo americano",
+        "price": 60,
+        "detail": "Conjunto de peças individuais para compor a mesa de refeição.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-copos",
+        "category": "Mesa",
+        "name": "Jogo de copos",
+        "price": 70,
+        "detail": "Conjunto de copos para uso diário ou ocasiões especiais.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-jantar",
+        "category": "Mesa",
+        "name": "Jogo de jantar",
+        "price": 300,
+        "detail": "Conjunto completo com pratos e peças para servir refeições.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-panela",
+        "category": "Cozinha",
+        "name": "Jogo de panela",
+        "price": 300,
+        "detail": "Conjunto de panelas para preparo de diferentes tipos de comida.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-pratos",
+        "category": "Mesa",
+        "name": "Jogo de pratos",
+        "price": 130,
+        "detail": "Conjunto de pratos rasos, fundos ou de sobremesa.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-sobremesa",
+        "category": "Mesa",
+        "name": "Jogo de sobremesa",
+        "price": 80,
+        "detail": "Peças específicas para servir doces, bolos e sobremesas.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-tacas",
+        "category": "Mesa",
+        "name": "Jogo de taças",
+        "price": 100,
+        "detail": "Conjunto de taças para bebidas diversas.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-talheres",
+        "category": "Mesa",
+        "name": "Jogo de talheres",
+        "price": 160,
+        "detail": "Conjunto com garfos, facas e colheres para refeições.",
+        "reservedBy": null
+    },
+    {
+        "id": "jogo-xicaras",
+        "category": "Mesa",
+        "name": "Jogo de xícaras",
+        "price": 90,
+        "detail": "Conjunto de xícaras para café, chá ou outras bebidas quentes.",
+        "reservedBy": null
+    },
+    {
+        "id": "kit-canecoes",
+        "category": "Cozinha",
+        "name": "Kit de canecões",
+        "price": 70,
+        "detail": "Conjunto de canecas grandes para uso diário.",
+        "reservedBy": null
+    },
+    {
+        "id": "kit-faca",
+        "category": "Cozinha",
+        "name": "Kit de faca",
+        "price": 120,
+        "detail": "Conjunto de facas de cozinha para preparo de alimentos.",
+        "reservedBy": null
+    },
+    {
+        "id": "kit-frigideiras",
+        "category": "Cozinha",
+        "name": "Kit frigideiras",
+        "price": 180,
+        "detail": "Conjunto de frigideiras para frituras, grelhados e preparos rápidos.",
+        "reservedBy": null
+    },
+    {
+        "id": "kit-pia",
+        "category": "Casa",
+        "name": "Kit de pia",
+        "price": 70,
+        "detail": "Itens de apoio para pia, como lixeira, rodo, suporte e acessórios.",
+        "reservedBy": null
+    },
+    {
+        "id": "kit-talheres-utensilios",
+        "category": "Cozinha",
+        "name": "Kit de talheres/utensílios",
+        "price": 100,
+        "detail": "Utensílios de cozinha como concha, escumadeira, espátula e pegador.",
+        "reservedBy": null
+    },
+    {
+        "id": "marinex",
+        "category": "Cozinha",
+        "name": "Marinex",
+        "price": 70,
+        "detail": "Travessa de vidro refratário para assar, servir ou armazenar alimentos.",
+        "reservedBy": null
+    },
+    {
+        "id": "panela-pressao",
+        "category": "Cozinha",
+        "name": "Panela de pressão",
+        "price": 130,
+        "detail": "Panela para preparo mais rápido de carnes, feijão e outros alimentos.",
+        "reservedBy": null
+    },
+    {
+        "id": "panos-prato",
+        "category": "Cozinha",
+        "name": "Panos de prato",
+        "price": 30,
+        "detail": "Panos para secar louças e auxiliar nas tarefas da cozinha.",
+        "reservedBy": null
+    },
+    {
+        "id": "panela-pipoqueira",
+        "category": "Cozinha",
+        "name": "Panela pipoqueira",
+        "price": 110,
+        "detail": "Panela própria para preparar pipoca com mais praticidade.",
+        "reservedBy": null
+    },
+    {
+        "id": "porta-temperos",
+        "category": "Cozinha",
+        "name": "Porta temperos",
+        "price": 50,
+        "detail": "Organizador para armazenar temperos de forma prática.",
+        "reservedBy": null
+    },
+    {
+        "id": "potes-arroz-feijao",
+        "category": "Cozinha",
+        "name": "Potes de arroz, feijão etc.",
+        "price": 80,
+        "detail": "Potes maiores para organizar mantimentos secos.",
+        "reservedBy": null
+    },
+    {
+        "id": "potes-hermeticos",
+        "category": "Cozinha",
+        "name": "Potes herméticos",
+        "price": 70,
+        "detail": "Potes com vedação para conservar melhor os alimentos.",
+        "reservedBy": null
+    },
+    {
+        "id": "tabua-carne",
+        "category": "Cozinha",
+        "name": "Tábua de carne",
+        "price": 40,
+        "detail": "Superfície para cortar carnes, legumes e outros alimentos.",
+        "reservedBy": null
+    },
+    {
+        "id": "tigelas-bowls",
+        "category": "Cozinha",
+        "name": "Tigelas/Bowls",
+        "price": 70,
+        "detail": "Recipientes para misturar, preparar ou servir alimentos.",
+        "reservedBy": null
+    },
+    {
+        "id": "aspirador",
+        "category": "Eletro",
+        "name": "Aspirador",
+        "price": 300,
+        "detail": "Eletrodoméstico para limpeza de pisos, tapetes e ambientes.",
+        "reservedBy": null
+    },
+    {
+        "id": "batedeira",
+        "category": "Eletro",
+        "name": "Batedeira",
+        "price": 250,
+        "detail": "Eletrodoméstico para bater massas, cremes e receitas doces.",
+        "reservedBy": null
+    },
+    {
+        "id": "ferro",
+        "category": "Lavanderia",
+        "name": "Ferro",
+        "price": 120,
+        "detail": "Aparelho para passar roupas e tecidos.",
+        "reservedBy": null
+    },
+    {
+        "id": "liquidificador",
+        "category": "Eletro",
+        "name": "Liquidificador",
+        "price": 180,
+        "detail": "Eletrodoméstico para preparar sucos, vitaminas, massas e molhos.",
+        "reservedBy": null
+    },
+    {
+        "id": "mixer",
+        "category": "Eletro",
+        "name": "Mixer",
+        "price": 110,
+        "detail": "Aparelho compacto para bater, misturar ou triturar alimentos.",
+        "reservedBy": null
+    },
+    {
+        "id": "multiprocessador",
+        "category": "Eletro",
+        "name": "Multiprocessador",
+        "price": 300,
+        "detail": "Equipamento para cortar, triturar, fatiar e processar alimentos.",
+        "reservedBy": null
+    },
+    {
+        "id": "sanduicheira",
+        "category": "Eletro",
+        "name": "Sanduicheira",
+        "price": 120,
+        "detail": "Eletrodoméstico para preparar sanduíches e lanches quentes.",
+        "reservedBy": null
+    },
+    {
+        "id": "almofadas",
+        "category": "Decoração",
+        "name": "Almofadas",
+        "price": 120,
+        "detail": "Itens decorativos e confortáveis para sofá, cama ou poltronas.",
+        "reservedBy": null
+    },
+    {
+        "id": "cortinas",
+        "category": "Decoração",
+        "name": "Cortinas",
+        "price": 180,
+        "detail": "Peças para decorar janelas e controlar entrada de luz.",
+        "reservedBy": null
+    },
+    {
+        "id": "edredom",
+        "category": "Quarto",
+        "name": "Edredom",
+        "price": 220,
+        "detail": "Cobertor acolchoado para cama, ideal para dias frios.",
+        "reservedBy": null
+    },
+    {
+        "id": "lencol-fronha",
+        "category": "Quarto",
+        "name": "Lençol e fronha",
+        "price": 140,
+        "detail": "Conjunto de cama com lençol e capa para travesseiro.",
+        "reservedBy": null
+    },
+    {
+        "id": "passadeira",
+        "category": "Decoração",
+        "name": "Passadeira",
+        "price": 100,
+        "detail": "Tapete comprido para corredor, cozinha ou área de passagem.",
+        "reservedBy": null
+    },
+    {
+        "id": "tapetes",
+        "category": "Decoração",
+        "name": "Tapetes",
+        "price": 160,
+        "detail": "Peças decorativas e funcionais para diferentes ambientes da casa.",
+        "reservedBy": null
+    },
+    {
+        "id": "tapetes-banheiro",
+        "category": "Banho",
+        "name": "Tapetes de banheiro",
+        "price": 70,
+        "detail": "Conjunto de tapetes próprios para banheiro.",
+        "reservedBy": null
+    },
+    {
+        "id": "toalhas",
+        "category": "Banho",
+        "name": "Toalhas",
+        "price": 90,
+        "detail": "Toalhas de banho ou rosto para uso diário.",
+        "reservedBy": null
+    },
+    {
+        "id": "toalha-mesa",
+        "category": "Mesa",
+        "name": "Toalha de mesa",
+        "price": 80,
+        "detail": "Peça para proteger e decorar a mesa.",
+        "reservedBy": null
+    },
+    {
+        "id": "toalha-rosto",
+        "category": "Banho",
+        "name": "Toalha de rosto",
+        "price": 30,
+        "detail": "Toalha menor para banheiro ou lavabo.",
+        "reservedBy": null
+    },
+    {
+        "id": "travesseiros",
+        "category": "Quarto",
+        "name": "Travesseiros",
+        "price": 100,
+        "detail": "Itens para maior conforto durante o sono.",
+        "reservedBy": null
+    },
+    {
+        "id": "kit-banheiro",
+        "category": "Banho",
+        "name": "Kit de banheiro",
+        "price": 80,
+        "detail": "Conjunto de acessórios para organizar pia e banheiro.",
+        "reservedBy": null
+    },
+    {
+        "id": "lixo-banheiro",
+        "category": "Banho",
+        "name": "Lixo de banheiro",
+        "price": 40,
+        "detail": "Lixeira pequena própria para banheiro.",
+        "reservedBy": null
+    },
+    {
+        "id": "kit-ferramentas",
+        "category": "Casa",
+        "name": "Kit de ferramentas",
+        "price": 120,
+        "detail": "Conjunto básico para pequenos reparos domésticos.",
+        "reservedBy": null
+    },
+    {
+        "id": "tabua-passar",
+        "category": "Lavanderia",
+        "name": "Tábua de passar roupa",
+        "price": 130,
+        "detail": "Suporte para passar roupas com mais praticidade.",
+        "reservedBy": null
+    },
+    {
+        "id": "bacias",
+        "category": "Casa",
+        "name": "Bacias",
+        "price": 40,
+        "detail": "Recipientes plásticos para limpeza, lavanderia ou organização.",
+        "reservedBy": null
+    },
+    {
+        "id": "baldes",
+        "category": "Casa",
+        "name": "Baldes",
+        "price": 40,
+        "detail": "Itens para limpeza e uso doméstico geral.",
+        "reservedBy": null
+    },
+    {
+        "id": "mop",
+        "category": "Casa",
+        "name": "Mop",
+        "price": 90,
+        "detail": "Acessório para limpeza prática de pisos.",
+        "reservedBy": null
+    }
+]

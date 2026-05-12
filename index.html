@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cha de Cozinha | Lista de Presentes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <div class="hero-bar">
+                    <p class="eyebrow">Chá de Cozinha</p>
+                    <p class="hero-mini-note">Lista de presentes com confirmação em tempo real</p>
+                </div>
+
+                <div class="hero-intro">
+                    <div class="hero-text-block">
+                        <h1>Uma lista elegante, simples e já pronta para confirmação de presentes.</h1>
+                        <p class="hero-text">
+                            Escolha um item, clique em pegar e confirme com seu nome e celular.
+                            Assim que confirmado, o presente fica reservado e ninguém mais pode selecioná-lo.
+                        </p>
+
+                        <div class="hero-points">
+                            <span>Reserva imediata</span>
+                            <span>Visual sofisticado</span>
+                            <span>Paleta do evento respeitada</span>
+                        </div>
+                    </div>
+
+                    <figure class="hero-media">
+                        <img src="IMGS/Nobanco.jpeg" alt="Casal sentado em um banco em ensaio ao ar livre">
+                        <figcaption>
+                            Um topo mais pessoal para acompanhar a lista de presentes.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <aside class="hero-note">
+                    <div>
+                        <span class="note-label">Importante</span>
+                        <p>
+                            Os presentes do chá devem seguir a paleta do evento:
+                            <strong>preto, branco ou cinza</strong>.
+                        </p>
+                    </div>
+                    <span class="note-tag">Elegância minimalista para combinar com o chá</span>
+                </aside>
+            </div>
+
+        </header>
+
+        <main>
+            <section class="gift-section" id="gift-selection-view">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Lista</p>
+                        <h2>Presentes disponíveis</h2>
+                    </div>
+                    <p class="section-description">
+                        Itens reservados aparecem como confirmados automaticamente.
+                    </p>
+                </div>
+
+                <div class="gift-grid" id="gift-grid"></div>
+            </section>
+
+            <section class="confirmation-section hidden" id="confirmation-view" aria-live="polite">
+                <button class="back-button" id="back-button" type="button">Voltar para a lista</button>
+
+                <div class="confirmation-card">
+                    <p class="section-kicker">Reserva do presente</p>
+                    <h2 id="selected-gift-name">Item selecionado</h2>
+                    <p class="confirmation-text">
+                        Preencha seus dados para assumir este presente. Depois da confirmação,
+                        ele ficará indisponível para os próximos convidados.
+                    </p>
+
+                    <form id="confirmation-form" class="confirmation-form">
+                        <label>
+                            <span>Seu nome</span>
+                            <input id="guest-name" name="guestName" type="text" placeholder="Digite seu nome" required>
+                        </label>
+
+                        <label>
+                            <span>Celular</span>
+                            <input id="guest-phone" name="guestPhone" type="tel" placeholder="(00) 00000-0000" required>
+                        </label>
+
+                        <p class="form-feedback hidden" id="form-feedback" aria-live="polite"></p>
+
+                        <button class="primary-button" type="submit">Confirmar presente</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <template id="gift-card-template">
+        <article class="gift-card">
+            <figure class="gift-image-wrap">
+                <img class="gift-image" src="" alt="">
+            </figure>
+            <div class="gift-card-top">
+                <p class="gift-category"></p>
+                <span class="gift-status"></span>
+            </div>
+            <h3 class="gift-name"></h3>
+            <p class="gift-detail"></p>
+            <button class="gift-button" type="button"></button>
+            <p class="gift-owner hidden"></p>
+        </article>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
