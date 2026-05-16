@@ -567,10 +567,14 @@ h3 {
         font-size: clamp(3.1rem, 10vw, 4.8rem);
     }
 
-    .hero-message,
     .hero-kicker {
         text-align: center;
         margin-inline: auto;
+    }
+
+    .hero-message {
+        text-align: justify;
+        margin-inline: 0;
     }
 
     .info-card {
