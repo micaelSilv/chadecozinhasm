@@ -1,13 +1,15 @@
 :root {
-    --background: #fbfaf7;
+    --background: #ffffff;
     --surface: #ffffff;
-    --surface-soft: #f3f0ea;
-    --surface-strong: #ebe5db;
-    --border: #ded7cc;
-    --text: #1f1d1a;
-    --muted: #6e685f;
-    --accent: #171614;
-    --shadow: 0 24px 70px rgba(65, 53, 36, 0.08);
+    --surface-soft: #fbfaf8;
+    --surface-muted: #f6f5f2;
+    --border: #e7e4de;
+    --border-strong: #ddd8ce;
+    --text: #161616;
+    --muted: #6c6963;
+    --accent: #1b1b1b;
+    --shadow: 0 20px 55px rgba(17, 17, 17, 0.04);
+    --shadow-soft: 0 10px 24px rgba(17, 17, 17, 0.03);
 }
 
 * {
@@ -21,9 +23,9 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: "Manrope", sans-serif;
+    background: var(--background);
     color: var(--text);
-    background: #ffffff;
+    font-family: "Manrope", sans-serif;
 }
 
 button,
@@ -31,258 +33,303 @@ input {
     font: inherit;
 }
 
+button {
+    border: 0;
+}
+
+svg {
+    display: block;
+}
+
 .page-shell {
-    width: min(1180px, calc(100% - 32px));
+    width: min(1240px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 32px 0 64px;
+    padding: 36px 0 72px;
 }
 
 .hero {
-    margin-bottom: 56px;
+    margin-bottom: 40px;
 }
 
-.invite-card {
+.hero-grid {
     display: grid;
-    grid-template-columns: minmax(260px, 360px) minmax(0, 560px);
-    align-items: start;
-    gap: 44px;
-    max-width: 980px;
-    margin: 0 auto;
+    grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+    align-items: center;
+    gap: 56px;
 }
 
-.invite-photo-frame {
+.hero-photo-shell {
     width: 100%;
     margin: 0;
-    aspect-ratio: 4 / 5;
     overflow: hidden;
-    border-radius: 32px;
-    background: var(--surface-strong);
+    border-radius: 34px;
+    background: var(--surface-muted);
+    aspect-ratio: 4 / 5.2;
     box-shadow: var(--shadow);
 }
 
-.invite-photo {
-    display: block;
+.hero-photo {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
 }
 
-.invite-copy {
+.hero-copy {
     display: grid;
-    gap: 18px;
-    align-content: start;
-    padding-top: 14px;
+    gap: 26px;
+    align-content: center;
 }
 
-.invite-kicker,
-.invite-weekday,
-.invite-location-label,
+.hero-kicker,
+.info-label,
 .section-kicker,
 .gift-category,
 .gift-status,
-.invite-map-button {
+.action-icon,
+.action-band .button,
+.info-card .button {
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
 }
 
-.invite-kicker,
-.invite-weekday,
-.invite-location-label,
+.hero-kicker,
+.info-label,
 .section-kicker,
 .gift-category {
     margin: 0;
     color: var(--muted);
-    font-size: 0.75rem;
-}
-
-.invite-names {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: end;
-    justify-content: flex-start;
-    gap: 12px;
-    margin: 0;
-    font-family: "Petit Formal Script", serif;
-    font-size: clamp(2.8rem, 5.4vw, 5.1rem);
-    line-height: 0.9;
-}
-
-.invite-ampersand {
-    font-size: clamp(2rem, 4vw, 3.8rem);
-}
-
-.invite-message {
-    max-width: 30ch;
-    margin: 0;
-    text-align: left;
-    color: var(--muted);
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.18rem, 1.55vw, 1.6rem);
-    line-height: 1.5;
-}
-
-.invite-meta {
-    display: grid;
-    grid-template-columns: minmax(210px, 0.84fr) minmax(240px, 1fr);
-    gap: 22px;
-    align-items: start;
-    width: 100%;
-    padding: 22px 24px;
-    border: 1px solid rgba(31, 29, 26, 0.08);
-    border-radius: 26px;
-    background: rgba(255, 255, 255, 0.66);
-    box-shadow: 0 16px 40px rgba(65, 53, 36, 0.05);
-}
-
-.invite-meta-block {
-    display: grid;
-    gap: 10px;
-    justify-items: center;
-    text-align: center;
-    align-content: start;
-}
-
-.invite-meta-block:first-child,
-.invite-location {
-    justify-items: start;
-    text-align: left;
-}
-
-.invite-date {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    margin: 0;
-    white-space: nowrap;
-    font-family: "Forum", serif;
-    font-size: clamp(1.55rem, 2vw, 2.15rem);
-    text-transform: uppercase;
-}
-
-.invite-date strong {
+    font-size: 0.76rem;
     font-weight: 600;
 }
 
-.invite-location {
+.hero-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 14px;
     margin: 0;
-    font-style: normal;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4.2rem, 7vw, 6.9rem);
+    font-weight: 600;
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+}
+
+.hero-title span {
+    display: inline-block;
+}
+
+.hero-ampersand {
+    font-size: clamp(2.4rem, 3vw, 3.4rem);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    opacity: 0.8;
+}
+
+.hero-message {
+    max-width: 35rem;
+    margin: 0;
+    color: var(--muted);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.42rem, 1.85vw, 1.82rem);
+    line-height: 1.55;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.info-card {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+    min-height: 100%;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    background: var(--surface-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+.info-icon,
+.action-icon {
+    color: var(--text);
+}
+
+.info-icon svg,
+.action-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.info-text,
+.action-text,
+.section-description,
+.confirmation-text,
+.gift-detail,
+.gift-owner {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.info-text {
+    font-size: 1rem;
+}
+
+.info-highlight {
+    margin: auto 0 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2rem, 2.8vw, 2.55rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.info-actions {
+    display: flex;
+    align-items: flex-start;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.action-band {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0 0 64px;
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    background: var(--surface-soft);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+.action-block {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 22px;
+    padding: 30px 34px;
+}
+
+.action-block + .action-block {
+    border-left: 1px solid var(--border);
+}
+
+.action-content {
+    display: grid;
     gap: 8px;
 }
 
-.invite-location p {
+.action-title {
     margin: 0;
     font-family: "Cormorant Garamond", serif;
-    font-size: 1.02rem;
-    line-height: 1.35;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
 }
 
-.invite-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: 12px;
+.action-text {
+    max-width: 28ch;
+    font-size: 0.98rem;
 }
 
-.invite-button,
-.invite-map-button,
-.gift-button,
-.primary-button,
-.back-button {
-    transition: transform 180ms ease, opacity 180ms ease, background-color 180ms ease;
-}
-
-.invite-button,
-.invite-map-button,
+.button,
 .gift-button,
 .primary-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 22px;
     border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease, color 160ms ease;
 }
 
-.invite-button,
+.button,
 .gift-button,
-.primary-button {
+.primary-button,
+.button-primary {
     background: var(--accent);
     color: #ffffff;
+    box-shadow: none;
 }
 
-.invite-button {
-    min-width: 0;
-    padding: 11px 18px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.08rem;
-    transition: none;
+.button-secondary {
+    border: 1px solid var(--border-strong);
+    background: transparent;
+    color: var(--text);
 }
 
-.invite-map-button {
-    padding: 10px 16px;
-    border: 1px solid var(--accent);
-    color: #ffffff;
-    background: var(--accent);
-    font-size: 0.78rem;
-    transition: none;
-}
-
-.invite-actions .invite-button,
-.invite-actions .invite-map-button {
-    width: fit-content;
-}
-
-.invite-button:hover,
-.invite-map-button:hover,
+.button:hover,
 .gift-button:hover,
 .primary-button:hover,
-.back-button:hover {
+.button-primary:hover,
+.button-secondary:hover {
     transform: translateY(-1px);
 }
 
-.invite-actions .invite-button:hover,
-.invite-actions .invite-map-button:hover {
-    transform: none;
+.button-primary:hover,
+.gift-button:hover,
+.primary-button:hover {
+    background: #111111;
 }
 
-h1,
-h2,
-h3 {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    line-height: 0.95;
+.button-secondary:hover {
+    border-color: var(--text);
+    background: #faf9f7;
 }
 
-h2 {
-    font-size: clamp(2.2rem, 3.5vw, 3.3rem);
+.button-arrow {
+    font-size: 0.84rem;
+    line-height: 1;
 }
 
-h3 {
-    font-size: 1.8rem;
+main {
+    display: grid;
+    gap: 32px;
+}
+
+.gift-section,
+.confirmation-section {
+    scroll-margin-top: 32px;
 }
 
 .section-heading {
     display: flex;
     justify-content: space-between;
     align-items: end;
-    gap: 16px;
-    margin: 10px 0 26px;
+    gap: 18px;
+    margin: 10px 0 28px;
 }
 
-.section-description,
-.confirmation-text,
-.gift-detail,
-.gift-owner {
-    color: var(--muted);
-    line-height: 1.7;
+h2,
+h3 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 0.94;
+    letter-spacing: -0.03em;
 }
 
-.gift-section,
-.confirmation-section {
-    animation: fadeUp 420ms ease;
+h2 {
+    font-size: clamp(2.5rem, 4vw, 3.55rem);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.85rem;
+    font-weight: 600;
 }
 
 .gift-grid {
@@ -294,31 +341,30 @@ h3 {
 .gift-card,
 .confirmation-card {
     border: 1px solid var(--border);
+    border-radius: 28px;
     background: var(--surface);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-soft);
 }
 
 .gift-card {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 26px;
-    border-radius: 26px;
-    background: linear-gradient(180deg, #ffffff 0%, #f9f5ef 100%);
-    transition: transform 180ms ease, box-shadow 180ms ease;
+    gap: 18px;
+    padding: 24px;
+    transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .gift-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 28px 70px rgba(65, 53, 36, 0.1);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 .gift-image-wrap {
     margin: 0;
-    aspect-ratio: 1 / 0.8;
     overflow: hidden;
-    border-radius: 20px;
-    background: var(--surface-soft);
+    border-radius: 22px;
+    aspect-ratio: 1 / 0.82;
+    background: var(--surface-muted);
 }
 
 .gift-image {
@@ -331,62 +377,61 @@ h3 {
 .gift-card-top {
     display: flex;
     justify-content: space-between;
-    gap: 16px;
-    align-items: center;
+    gap: 14px;
+    align-items: start;
 }
 
 .gift-status {
-    font-size: 0.75rem;
-    color: var(--text);
-    background: var(--surface-soft);
-    padding: 8px 12px;
-    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 12px;
     border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
 }
 
 .gift-status.confirmed {
-    background: #1f1d1a;
+    border-color: var(--accent);
+    background: var(--accent);
     color: #ffffff;
-    border-color: #1f1d1a;
 }
 
 .gift-button,
 .primary-button {
-    padding: 14px 16px;
-    border: 0;
+    font-size: 0.94rem;
     font-weight: 700;
-    cursor: pointer;
 }
 
 .gift-button:disabled {
     cursor: not-allowed;
-    background: #d9d2c8;
-    color: var(--muted);
+    transform: none;
+    background: #d8d4cd;
+    color: #6f6a63;
 }
 
 .gift-owner {
-    margin: 0;
-    padding-top: 10px;
+    padding-top: 14px;
     border-top: 1px solid var(--border);
+    font-size: 0.94rem;
 }
 
 .confirmation-section {
-    max-width: 720px;
+    max-width: 760px;
 }
 
 .back-button {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     padding: 0;
-    border: 0;
     background: transparent;
     color: var(--muted);
     cursor: pointer;
 }
 
 .confirmation-card {
-    padding: 32px;
-    border-radius: 28px;
-    background: linear-gradient(180deg, #ffffff 0%, #f9f5ee 100%);
+    padding: 34px;
 }
 
 .confirmation-text {
@@ -406,105 +451,107 @@ h3 {
 
 .confirmation-form input {
     width: 100%;
-    padding: 16px;
+    min-height: 56px;
+    padding: 0 18px;
     border: 1px solid var(--border);
-    border-radius: 16px;
-    background: #fffdfa;
+    border-radius: 18px;
+    background: #ffffff;
     color: var(--text);
     outline: none;
 }
 
 .confirmation-form input:focus {
-    border-color: #b8ac9a;
+    border-color: var(--border-strong);
 }
 
 .form-feedback {
-    margin: -4px 0 2px;
     padding: 14px 16px;
-    border-radius: 16px;
     border: 1px solid var(--border);
+    border-radius: 18px;
     background: var(--surface-soft);
     color: var(--text);
 }
 
 .form-feedback.error {
-    border-color: #d5c3b2;
-    background: #f6ece3;
+    border-color: #dac7b7;
+    background: #f8efe8;
 }
 
 .form-feedback.success {
-    border-color: #cdd6c2;
-    background: #edf3e7;
+    border-color: #ced5c7;
+    background: #eef3ea;
 }
 
 .hidden {
     display: none;
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+@media (max-width: 1100px) {
+    .hero-grid {
+        grid-template-columns: minmax(280px, 390px) minmax(0, 1fr);
+        gap: 40px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .action-block {
+        grid-template-columns: auto 1fr;
+    }
+
+    .action-block .button {
+        grid-column: 2;
+        justify-self: start;
     }
 }
 
-@media (max-width: 980px) {
-    .invite-card {
-        grid-template-columns: 1fr;
-        gap: 24px;
+@media (max-width: 900px) {
+    .page-shell {
+        width: min(100% - 32px, 100%);
+        padding: 24px 0 56px;
     }
 
-    .invite-photo-frame {
-        max-width: 420px;
+    .hero-grid,
+    .action-band,
+    .info-grid,
+    .gift-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        gap: 28px;
+    }
+
+    .hero-photo-shell {
+        max-width: 460px;
         margin: 0 auto;
     }
 
-    .invite-copy {
-        gap: 20px;
+    .hero-copy {
+        gap: 22px;
     }
 
-    .invite-meta {
-        grid-template-columns: 1fr;
+    .hero-title {
+        justify-content: center;
+        text-align: center;
+        font-size: clamp(3.5rem, 11vw, 5.4rem);
     }
 
-    .gift-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 640px) {
-    .page-shell {
-        width: min(100% - 20px, 100%);
-        padding: 20px 0 32px;
+    .hero-message,
+    .hero-kicker {
+        text-align: center;
+        margin-inline: auto;
     }
 
-    .invite-message {
-        max-width: 100%;
+    .info-card {
+        min-height: 0;
     }
 
-    .invite-meta {
-        padding: 20px 18px;
-        border-radius: 20px;
+    .action-block {
+        grid-template-columns: auto 1fr;
+        gap: 18px;
     }
 
-    .invite-date {
-        gap: 10px;
-        font-size: clamp(1.4rem, 6vw, 2rem);
-    }
-
-    .invite-actions {
-        flex-direction: column;
-    }
-
-    .invite-map-button,
-    .invite-button {
-        width: 100%;
-        max-width: none;
-        min-width: 0;
+    .action-block + .action-block {
+        border-left: 0;
+        border-top: 1px solid var(--border);
     }
 
     .section-heading {
@@ -512,13 +559,69 @@ h3 {
         align-items: start;
     }
 
-    .gift-grid {
+    .confirmation-section {
+        max-width: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-shell {
+        width: min(100% - 20px, 100%);
+        padding: 18px 0 40px;
+    }
+
+    .hero {
+        margin-bottom: 28px;
+    }
+
+    .hero-title {
+        gap: 2px 12px;
+    }
+
+    .hero-message {
+        max-width: 100%;
+        font-size: 1.28rem;
+    }
+
+    .info-card,
+    .gift-card,
+    .confirmation-card,
+    .action-block {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .action-band {
+        border-radius: 24px;
+        margin-bottom: 42px;
+    }
+
+    .action-block {
         grid-template-columns: 1fr;
     }
 
-    .gift-card,
+    .action-block .button {
+        grid-column: auto;
+        width: 100%;
+        justify-self: stretch;
+    }
+
+    .button,
+    .gift-button,
+    .primary-button {
+        width: 100%;
+    }
+
+    .gift-card-top {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .gift-status {
+        min-height: 32px;
+    }
+
     .confirmation-card {
-        padding: 22px;
-        border-radius: 22px;
+        padding: 24px;
     }
 }
