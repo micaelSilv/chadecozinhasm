@@ -62,6 +62,7 @@ svg {
     width: 100%;
     margin: 0;
     overflow: hidden;
+    border: 2px solid var(--accent);
     border-radius: 34px;
     background: var(--surface-muted);
     aspect-ratio: 4 / 5.2;
