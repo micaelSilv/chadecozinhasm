@@ -595,6 +595,42 @@ h3 {
     }
 }
 
+@media (min-width: 901px) {
+    .page-shell {
+        width: 100%;
+        margin: 0;
+        padding-top: 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: minmax(420px, 46vw) minmax(0, 1fr);
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .hero-photo-shell {
+        border-radius: 0;
+        aspect-ratio: auto;
+        min-height: 680px;
+    }
+
+    .hero-copy {
+        gap: 0;
+        padding-top: 0;
+    }
+
+    .hero-intro-card {
+        height: 100%;
+        padding: 40px 44px;
+        border-radius: 0;
+    }
+
+    main {
+        width: min(1240px, calc(100% - 48px));
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 640px) {
     .page-shell {
         width: min(100% - 20px, 100%);
