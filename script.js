@@ -2,6 +2,7 @@ const giftGrid = document.querySelector("#gift-grid");
 const giftTemplate = document.querySelector("#gift-card-template");
 const giftSelectionView = document.querySelector("#gift-selection-view");
 const confirmationView = document.querySelector("#confirmation-view");
+const openGiftListButton = document.querySelector("#open-gift-list");
 const selectedGiftName = document.querySelector("#selected-gift-name");
 const confirmationForm = document.querySelector("#confirmation-form");
 const guestNameInput = document.querySelector("#guest-name");
@@ -72,6 +73,12 @@ const giftImageMap = {
 };
 
 loadGiftList();
+
+openGiftListButton?.addEventListener("click", (event) => {
+    event.preventDefault();
+    openGiftSelection();
+    giftSelectionView.scrollIntoView({ behavior: "smooth", block: "start" });
+});
 
 giftGrid.addEventListener("click", (event) => {
     const trigger = event.target.closest("button[data-gift-id]");
