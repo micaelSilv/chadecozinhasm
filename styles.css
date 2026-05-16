@@ -86,7 +86,6 @@ svg {
 .section-kicker,
 .gift-category,
 .gift-status,
-.action-icon,
 .action-band .button,
 .info-card .button {
     letter-spacing: 0.18em;
@@ -100,7 +99,7 @@ svg {
     margin: 0;
     color: var(--muted);
     font-size: 0.76rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .hero-title {
@@ -145,7 +144,7 @@ svg {
 
 .info-card {
     display: grid;
-    gap: 14px;
+    gap: 12px;
     align-content: start;
     min-height: 100%;
     padding: 24px;
@@ -153,21 +152,6 @@ svg {
     border-radius: 26px;
     background: var(--surface-soft);
     box-shadow: var(--shadow-soft);
-}
-
-.info-icon,
-.action-icon {
-    color: var(--text);
-}
-
-.info-icon svg,
-.action-icon svg {
-    width: 20px;
-    height: 20px;
-    stroke: currentColor;
-    stroke-width: 1.4;
-    stroke-linecap: round;
-    stroke-linejoin: round;
 }
 
 .info-text,
@@ -183,6 +167,14 @@ svg {
 
 .info-text {
     font-size: 1rem;
+}
+
+.info-card:first-child .info-text {
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 .info-highlight {
@@ -213,7 +205,7 @@ svg {
 
 .action-block {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
     align-items: center;
     gap: 22px;
     padding: 30px 34px;
@@ -289,11 +281,6 @@ svg {
 .button-secondary:hover {
     border-color: var(--text);
     background: #faf9f7;
-}
-
-.button-arrow {
-    font-size: 0.84rem;
-    line-height: 1;
 }
 
 main {
@@ -493,11 +480,10 @@ h3 {
     }
 
     .action-block {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 1fr;
     }
 
     .action-block .button {
-        grid-column: 2;
         justify-self: start;
     }
 }
@@ -545,7 +531,7 @@ h3 {
     }
 
     .action-block {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 1fr;
         gap: 18px;
     }
 
