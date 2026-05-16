@@ -131,6 +131,7 @@ svg {
 .hero-message {
     max-width: 35rem;
     margin: 0;
+    text-align: justify;
     color: var(--muted);
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(1.42rem, 1.85vw, 1.82rem);
