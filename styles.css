@@ -1,9 +1,9 @@
 :root {
-    --background: #f2eee7;
+    --background: #f7f4ef;
     --surface: #ffffff;
-    --surface-soft: #fbfaf8;
+    --surface-soft: #fffdf9;
     --surface-muted: #f6f5f2;
-    --border: #e7e4de;
+    --border: rgba(0, 0, 0, 0.06);
     --border-strong: #ddd8ce;
     --text: #161616;
     --muted: #222222;
@@ -44,29 +44,29 @@ svg {
 .page-shell {
     width: min(1240px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 36px 0 72px;
+    padding: 32px 0 64px;
 }
 
 .hero {
-    margin-bottom: 40px;
+    margin-bottom: 34px;
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
     align-items: center;
-    gap: 56px;
+    gap: 52px;
 }
 
 .hero-photo-shell {
     width: 100%;
     margin: 0;
     overflow: hidden;
-    border: 4px solid var(--accent);
-    border-radius: 34px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 30px;
     background: var(--surface-muted);
-    aspect-ratio: 4 / 5.2;
-    box-shadow: var(--shadow);
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 12px 34px rgba(17, 17, 17, 0.04);
 }
 
 .hero-photo {
@@ -78,8 +78,9 @@ svg {
 
 .hero-copy {
     display: grid;
-    gap: 26px;
+    gap: 22px;
     align-content: center;
+    padding-top: 8px;
 }
 
 .hero-kicker,
@@ -99,8 +100,8 @@ svg {
 .gift-category {
     margin: 0;
     color: var(--text);
-    font-size: 0.95rem;
-    font-weight: 800;
+    font-size: 0.84rem;
+    font-weight: 700;
 }
 
 .hero-title {
@@ -110,10 +111,10 @@ svg {
     gap: 0 14px;
     margin: 0;
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(4.2rem, 7vw, 6.9rem);
-    font-weight: 600;
-    line-height: 0.82;
-    letter-spacing: -0.055em;
+    font-size: clamp(3.5rem, 5.8vw, 5.55rem);
+    font-weight: 500;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
 }
 
 .hero-title span {
@@ -121,37 +122,37 @@ svg {
 }
 
 .hero-ampersand {
-    font-size: clamp(2.4rem, 3vw, 3.4rem);
+    font-size: clamp(1.95rem, 2.5vw, 2.8rem);
     font-style: italic;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: -0.03em;
     opacity: 0.8;
 }
 
 .hero-message {
-    max-width: 35rem;
+    max-width: 31rem;
     margin: 0;
-    text-align: justify;
+    text-align: left;
     color: var(--muted);
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.42rem, 1.85vw, 1.82rem);
-    line-height: 1.55;
+    font-size: clamp(1.24rem, 1.5vw, 1.56rem);
+    line-height: 1.7;
 }
 
 .info-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 16px;
 }
 
 .info-card {
     display: grid;
-    gap: 12px;
+    gap: 10px;
     align-content: start;
     min-height: 100%;
-    padding: 24px;
+    padding: 18px 20px;
     border: 1px solid var(--border);
-    border-radius: 26px;
+    border-radius: 22px;
     background: var(--surface-soft);
     box-shadow: var(--shadow-soft);
 }
@@ -184,42 +185,52 @@ svg {
     margin: auto 0 0;
     color: var(--text);
     font-family: "Manrope", sans-serif;
-    font-size: clamp(1.42rem, 1.85vw, 1.72rem);
+    font-size: clamp(1.32rem, 1.7vw, 1.58rem);
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.28;
     letter-spacing: 0;
 }
 
 .info-card-location .info-text {
     font-family: "Manrope", sans-serif;
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.6;
+}
+
+.info-card-location .info-text:first-of-type {
+    white-space: nowrap;
 }
 
 .info-actions {
     display: flex;
     align-items: flex-start;
     margin-top: auto;
-    padding-top: 8px;
+    padding-top: 4px;
 }
 
 .action-band {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 0;
     margin: 0 0 64px;
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    background: var(--surface-soft);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
 }
 
 .action-block {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 22px;
-    padding: 30px 34px;
-    border: 1px solid var(--border);
-    border-radius: 32px;
-    background: var(--surface);
-    box-shadow: var(--shadow-soft);
+    gap: 18px;
+    padding: 26px 28px;
+    background: transparent;
+}
+
+.action-block + .action-block {
+    border-left: 1px solid var(--border);
 }
 
 .action-content {
@@ -248,8 +259,8 @@ svg {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-height: 52px;
-    padding: 0 22px;
+    min-height: 48px;
+    padding: 0 20px;
     border-radius: 999px;
     text-decoration: none;
     cursor: pointer;
@@ -482,8 +493,8 @@ h3 {
 
 @media (max-width: 1100px) {
     .hero-grid {
-        grid-template-columns: minmax(280px, 390px) minmax(0, 1fr);
-        gap: 40px;
+        grid-template-columns: minmax(250px, 340px) minmax(0, 1fr);
+        gap: 34px;
     }
 
     .action-block {
@@ -513,18 +524,19 @@ h3 {
     }
 
     .hero-photo-shell {
-        max-width: 460px;
+        max-width: 420px;
         margin: 0 auto;
     }
 
     .hero-copy {
         gap: 22px;
+        padding-top: 0;
     }
 
     .hero-title {
         justify-content: center;
         text-align: center;
-        font-size: clamp(3.5rem, 11vw, 5.4rem);
+        font-size: clamp(3.1rem, 10vw, 4.8rem);
     }
 
     .hero-message,
@@ -537,13 +549,9 @@ h3 {
         min-height: 0;
     }
 
-    .action-block {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
     .action-block + .action-block {
-        border-top: 0;
+        border-left: 0;
+        border-top: 1px solid var(--border);
     }
 
     .section-heading {
@@ -589,7 +597,11 @@ h3 {
 
     .action-block {
         grid-template-columns: 1fr;
-        border-radius: 24px;
+        gap: 16px;
+    }
+
+    .info-card-location .info-text:first-of-type {
+        white-space: normal;
     }
 
     .action-block .button {
