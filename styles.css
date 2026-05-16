@@ -168,32 +168,32 @@ svg {
 }
 
 .info-text {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Manrope", sans-serif;
     font-size: 1rem;
 }
 
 .info-card:first-child .info-text {
     color: var(--text);
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.3rem;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.06rem;
     font-weight: 600;
-    line-height: 1.25;
+    line-height: 1.45;
 }
 
 .info-highlight {
     margin: auto 0 0;
     color: var(--text);
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.85rem, 2.35vw, 2.2rem);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.42rem, 1.85vw, 1.72rem);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    line-height: 1.35;
+    letter-spacing: 0;
 }
 
 .info-card-location .info-text {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.2rem;
-    line-height: 1.35;
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .info-actions {
