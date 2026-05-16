@@ -97,7 +97,7 @@ svg {
 .section-kicker,
 .gift-category {
     margin: 0;
-    color: var(--muted);
+    color: var(--text);
     font-size: 0.95rem;
     font-weight: 800;
 }
@@ -172,20 +172,20 @@ svg {
 
 .info-card:first-child .info-text {
     color: var(--text);
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.38rem;
-    font-weight: 600;
-    line-height: 1.2;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .info-highlight {
     margin: auto 0 0;
     color: var(--text);
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.85rem, 2.4vw, 2.25rem);
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0;
 }
 
 .info-actions {
