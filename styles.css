@@ -23,9 +23,7 @@ body {
     min-height: 100vh;
     font-family: "Manrope", sans-serif;
     color: var(--text);
-    background:
-        radial-gradient(circle at top left, rgba(199, 183, 155, 0.16), transparent 24%),
-        linear-gradient(180deg, #fffdf9 0%, #f8f5ef 100%);
+    background: #ffffff;
 }
 
 button,
