@@ -47,22 +47,11 @@ input {
     justify-items: center;
     gap: 16px;
     padding: 56px 48px 50px;
-    border: 1px solid var(--border);
-    border-radius: 40px;
+    border: 0;
+    border-radius: 0;
     text-align: center;
-    background:
-        radial-gradient(circle at center, rgba(255, 255, 255, 0.94), rgba(249, 244, 237, 0.98) 68%, rgba(237, 230, 219, 1) 100%),
-        linear-gradient(180deg, #fffdfa 0%, #f8f4ed 100%);
-    box-shadow: 0 28px 70px rgba(40, 33, 24, 0.1);
-}
-
-.invite-card::before {
-    content: "";
-    position: absolute;
-    inset: 18px;
-    border: 1px solid rgba(44, 36, 27, 0.16);
-    border-radius: 32px;
-    pointer-events: none;
+    background: transparent;
+    box-shadow: none;
 }
 
 .invite-kicker {
@@ -120,8 +109,7 @@ input {
     width: min(100%, 620px);
     margin: 0;
     padding: 24px 20px;
-    border-top: 1px solid rgba(31, 29, 26, 0.18);
-    border-bottom: 1px solid rgba(31, 29, 26, 0.18);
+    border: 0;
     font-family: "Forum", serif;
     font-size: clamp(2rem, 4vw, 3.2rem);
     text-transform: uppercase;
@@ -442,12 +430,6 @@ h3 {
 
     .invite-card {
         padding: 34px 20px 30px;
-        border-radius: 28px;
-    }
-
-    .invite-card::before {
-        inset: 10px;
-        border-radius: 22px;
     }
 
     .invite-message {
