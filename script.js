@@ -204,6 +204,7 @@ function renderGiftList() {
         giftCategory.textContent = gift.category;
         giftName.textContent = gift.name;
         giftDetail.textContent = gift.detail;
+        status.classList.remove("available", "confirmed");
 
         if (gift.reservedBy) {
             status.textContent = "Confirmado";
@@ -214,6 +215,7 @@ function renderGiftList() {
             owner.classList.remove("hidden");
         } else {
             status.textContent = "Disponível";
+            status.classList.add("available");
             actionButton.textContent = "Pegar";
             actionButton.dataset.giftId = gift.id;
         }

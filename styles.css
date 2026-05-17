@@ -479,14 +479,21 @@ h3 {
     border: 1px solid var(--border);
     border-radius: 999px;
     color: var(--muted);
+    background: #f4f1ea;
     font-size: 0.72rem;
     font-weight: 700;
 }
 
+.gift-status.available {
+    border-color: #cfe6cf;
+    background: #eaf7e8;
+    color: #2f6a3b;
+}
+
 .gift-status.confirmed {
-    border-color: var(--accent);
-    background: var(--accent);
-    color: #ffffff;
+    border-color: #efc9c9;
+    background: #fdeaea;
+    color: #8d3e3e;
 }
 
 .gift-button,
