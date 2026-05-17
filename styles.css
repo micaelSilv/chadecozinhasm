@@ -143,6 +143,12 @@ svg {
     font-weight: 700;
 }
 
+/* Make the small labels for info cards more prominent (Data e Horário / Local) */
+.info-label {
+    font-size: 1.05rem; /* increased from 0.84rem */
+    font-weight: 700;
+}
+
 .hero-title {
     display: flex;
     flex-wrap: wrap;
