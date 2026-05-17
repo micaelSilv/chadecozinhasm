@@ -323,7 +323,6 @@ function renderGiftList() {
         const image = card.querySelector(".gift-image");
         const status = card.querySelector(".gift-status");
         const giftName = card.querySelector(".gift-name");
-        const giftDetail = card.querySelector(".gift-detail");
         const giftLink = card.querySelector(".gift-link");
         const actionButton = card.querySelector(".gift-button");
         const owner = card.querySelector(".gift-owner");
@@ -331,7 +330,6 @@ function renderGiftList() {
         setGiftImage(image, gift);
         image.alt = gift.name;
         giftName.textContent = gift.name;
-        giftDetail.textContent = gift.detail;
         giftLink.href = gift.purchaseLink || "#";
         giftLink.classList.remove("available");
         giftLink.classList.toggle("is-placeholder", !gift.purchaseLink);
