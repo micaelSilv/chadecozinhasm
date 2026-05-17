@@ -3,6 +3,7 @@ const giftTemplate = document.querySelector("#gift-card-template");
 const giftSelectionView = document.querySelector("#gift-selection-view");
 const confirmationView = document.querySelector("#confirmation-view");
 const openGiftListButton = document.querySelector("#open-gift-list");
+const floatingHomeButton = document.querySelector("#floating-home-button");
 const heroPhotoShell = document.querySelector(".hero-photo-shell");
 const heroPhoto = document.querySelector(".hero-photo");
 const heroPhotoDots = Array.from(document.querySelectorAll(".hero-photo-dot"));
@@ -92,6 +93,10 @@ openGiftListButton?.addEventListener("click", (event) => {
     event.preventDefault();
     openGiftSelection();
     giftSelectionView.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+floatingHomeButton?.addEventListener("click", () => {
+    openMainView();
 });
 
 giftGrid.addEventListener("click", (event) => {
@@ -225,6 +230,8 @@ function openConfirmationView(giftId) {
     selectedGiftId = giftId;
     setFeedback("", "");
     selectedGiftName.textContent = selectedGift.name;
+    document.body.classList.add("list-view");
+    floatingHomeButton?.classList.remove("hidden");
     giftSelectionView.classList.add("hidden");
     confirmationView.classList.remove("hidden");
     guestNameInput.focus();
@@ -232,8 +239,21 @@ function openConfirmationView(giftId) {
 
 function openGiftSelection() {
     selectedGiftId = null;
+    document.body.classList.add("list-view");
+    floatingHomeButton?.classList.remove("hidden");
     confirmationView.classList.add("hidden");
     giftSelectionView.classList.remove("hidden");
+}
+
+function openMainView() {
+    selectedGiftId = null;
+    setFeedback("", "");
+    confirmationForm.reset();
+    document.body.classList.remove("list-view");
+    floatingHomeButton?.classList.add("hidden");
+    confirmationView.classList.add("hidden");
+    giftSelectionView.classList.add("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function initHeroSlideshow() {

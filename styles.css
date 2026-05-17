@@ -355,6 +355,15 @@ main {
     gap: 32px;
 }
 
+body.list-view .hero,
+body.list-view .action-band {
+    display: none;
+}
+
+body.list-view main {
+    padding-top: 24px;
+}
+
 .gift-section,
 .confirmation-section {
     scroll-margin-top: 32px;
@@ -482,6 +491,39 @@ h3 {
     background: transparent;
     color: var(--muted);
     cursor: pointer;
+}
+
+.floating-home-button {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 30;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 16px 32px rgba(17, 17, 17, 0.18);
+    cursor: pointer;
+}
+
+.floating-home-button svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.floating-home-button:hover {
+    transform: translateY(-1px);
+    background: #111111;
 }
 
 .confirmation-card {
@@ -738,6 +780,13 @@ h3 {
 
     .action-band {
         margin-bottom: 42px;
+    }
+
+    .floating-home-button {
+        right: 16px;
+        bottom: 16px;
+        width: 54px;
+        height: 54px;
     }
 
     .action-block {
