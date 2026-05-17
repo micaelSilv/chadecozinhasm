@@ -270,6 +270,12 @@ svg {
     border-left: 0;
 }
 
+/* Make the first action-block (Lista de Presentes) match gift-card sizing */
+.action-band .action-block:first-child {
+    max-width: 560px; /* similar to gift-card max width */
+    width: 100%;
+}
+
 .action-content {
     display: grid;
     gap: 8px;
@@ -877,6 +883,12 @@ h3 {
         grid-template-columns: 80%; /* cards ocupam 80% da largura no mobile */
         justify-content: center;
         gap: 14px;
+    }
+
+    /* ensure the 'Lista de Presentes' action card matches gift-card mobile width */
+    .action-band .action-block:first-child {
+        width: 80%;
+        margin: 0 auto;
     }
 
     .hero-grid {
