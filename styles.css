@@ -880,14 +880,14 @@ h3 {
     }
 
     .gift-grid {
-        grid-template-columns: 80%; /* cards ocupam 80% da largura no mobile */
+        grid-template-columns: 90%; /* cards ocupam 90% da largura no mobile */
         justify-content: center;
         gap: 14px;
     }
 
     /* ensure the 'Lista de Presentes' action card matches gift-card mobile width */
     .action-band .action-block:first-child {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
     }
 
