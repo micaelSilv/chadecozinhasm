@@ -296,8 +296,8 @@ svg {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-height: 48px;
-    padding: 0 20px;
+    min-height: 44px; /* um pouco menor para ficar mais enxuto */
+    padding: 0 16px;
     border-radius: 999px;
     text-decoration: none;
     cursor: pointer;
@@ -591,15 +591,25 @@ h3 {
     margin: 0;
     overflow: hidden;
     border-radius: 8px; /* reduzido de 12px */
-    aspect-ratio: 1 / 0.82;
+    aspect-ratio: 1 / 0.92; /* leve redução de altura (mais discreta) */
     background: var(--surface-muted);
+    width: 96%; /* reduz ligeiramente a largura do container da imagem */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gift-image {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* ocupa 100% do container (container reduzido) */
+    height: auto; /* preserva proporção natural */
     display: block;
+    margin: 0 auto;
     object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .gift-image-wrap {
+        width: 100%; /* mobile: imagem ocupa todo o card */
+    }
 }
 
 .gift-card-top {
@@ -668,15 +678,17 @@ h3 {
 
 .gift-button,
 .primary-button {
-    font-size: 0.94rem;
+    font-size: 0.92rem; /* leve ajuste para manter proporção */
     font-weight: 700;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
 .gift-link {
     align-self: flex-start;
     color: var(--text);
-    font-size: 0.94rem;
-    line-height: 1.3;
+    font-size: 0.88rem; /* um pouco menor */
+    line-height: 1.25;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -697,9 +709,10 @@ h3 {
 }
 
 .gift-owner {
-    padding-top: 14px;
+    padding-top: 10px;
     border-top: 1px solid var(--border);
-    font-size: 0.94rem;
+    font-size: 0.86rem;
+    color: var(--muted);
 }
 
 .confirmation-section {
