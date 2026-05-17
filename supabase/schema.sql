@@ -13,7 +13,6 @@ create table if not exists public.gifts (
 );
 
 alter table public.gifts add column if not exists purchase_link text;
-alter table public.gifts add column if not exists image text;
 
 create unique index if not exists gifts_name_key on public.gifts (name);
 create index if not exists gifts_sort_order_idx on public.gifts (sort_order);
@@ -53,7 +52,7 @@ insert into public.gifts (
 ) values
     (
         '01',
-        'Prestige',
+        'Prestigio',
         'Jogo de panelas',
         null,
         'Base para cozinhar arroz, feijao, molhos, legumes e refeicoes do dia a dia.',
@@ -66,7 +65,7 @@ insert into public.gifts (
     ),
     (
         '8',
-        'Prestige',
+        'Especial',
         'Jogo de pratos',
         null,
         'Conjunto de pratos para o dia a dia e ocasioes especiais.',
@@ -79,7 +78,7 @@ insert into public.gifts (
     ),
     (
         '14',
-        'Prestige',
+        'Prestigio',
         'Liquidificador',
         null,
         'Para vitaminas, sucos, molhos e receitas da casa.',
@@ -92,7 +91,7 @@ insert into public.gifts (
     ),
     (
         '16',
-        'Prestige',
+        'Prestigio',
         'Air fryer',
         null,
         'Para preparar receitas com praticidade no dia a dia.',
@@ -105,7 +104,7 @@ insert into public.gifts (
     ),
     (
         '28',
-        'Prestige',
+        'Prestigio',
         'Jogo de cama casal',
         null,
         'Conjunto para trazer conforto e completar o quarto.',
@@ -118,7 +117,7 @@ insert into public.gifts (
     ),
     (
         '31',
-        'Prestige',
+        'Prestigio',
         'Cobertor',
         null,
         'Cobertor para deixar as noites mais confortaveis.',
@@ -131,7 +130,7 @@ insert into public.gifts (
     ),
     (
         '37',
-        'Prestige',
+        'Prime',
         'Varal',
         null,
         'Varal para secagem pratica das roupas no dia a dia.',
@@ -144,7 +143,7 @@ insert into public.gifts (
     ),
     (
         '38',
-        'Prestige',
+        'Prestigio',
         'Ferro de passar roupa',
         null,
         'Ferro a vapor para facilitar o cuidado com as roupas.',
@@ -157,7 +156,7 @@ insert into public.gifts (
     ),
     (
         '39',
-        'Prestige',
+        'Prime',
         'Tabua de passar roupa',
         null,
         'Base pratica para passar roupas com mais conforto.',
@@ -210,7 +209,7 @@ insert into public.gifts (
     ),
     (
         '21',
-        'Prime',
+        'Especial',
         'Conjunto de utensilios de cozinha',
         null,
         'Conjunto pratico para o preparo das refeicoes do dia a dia.',
@@ -289,7 +288,7 @@ insert into public.gifts (
     ),
     (
         '5',
-        'Especial',
+        'Prime',
         'Potes',
         null,
         'Conjunto versatil para armazenar e organizar alimentos.',
@@ -328,7 +327,7 @@ insert into public.gifts (
     ),
     (
         '15',
-        'Especial',
+        'Prime',
         'Sanduicheira ou grill',
         null,
         'Pratica para lanches, grelhados e refeicoes rapidas.',
@@ -367,7 +366,7 @@ insert into public.gifts (
     ),
     (
         '27',
-        'Especial',
+        'Prime',
         'Porta temperos',
         null,
         'Ajuda a manter os temperos organizados e ao alcance.',
@@ -380,7 +379,7 @@ insert into public.gifts (
     ),
     (
         '36',
-        'Especial',
+        'Prime',
         'Cesto de roupa suja',
         null,
         'Ajuda a organizar roupas de forma pratica na lavanderia.',
@@ -394,7 +393,7 @@ insert into public.gifts (
 
     (
         '04',
-        'Essencial',
+        'Especial',
         'Assadeira retangular',
         null,
         'Para forno: carnes, lasanha, legumes, bolos simples e gratinados.',
@@ -407,7 +406,7 @@ insert into public.gifts (
     ),
     (
         '9',
-        'Essencial',
+        'Especial',
         'Jogo de talheres',
         null,
         'Conjunto para servir as refeicoes do dia a dia.',
@@ -433,7 +432,7 @@ insert into public.gifts (
     ),
     (
         '11',
-        'Essencial',
+        'Especial',
         'Xicaras',
         null,
         'Jogo para cafe e cha no dia a dia.',
@@ -446,7 +445,7 @@ insert into public.gifts (
     ),
     (
         '17',
-        'Essencial',
+        'Prime',
         'Escorredor de louca',
         null,
         'Ajuda a organizar pratos, copos e talheres apos a lavagem.',
@@ -459,7 +458,7 @@ insert into public.gifts (
     ),
     (
         '18',
-        'Essencial',
+        'Especial',
         'Lixeira de cozinha',
         null,
         'Item pratico para manter a cozinha organizada.',
@@ -485,7 +484,7 @@ insert into public.gifts (
     ),
     (
         '20',
-        'Essencial',
+        'Especial',
         'Jogo de facas',
         null,
         'Conjunto para o preparo das refeicoes da casa.',
@@ -499,7 +498,7 @@ insert into public.gifts (
 
     (
         '24',
-        'Essencial',
+        'Especial',
         'Toalha de mesa',
         null,
         'Peca para compor e proteger a mesa das refeicoes.',
@@ -538,7 +537,7 @@ insert into public.gifts (
     ),
     (
         '33',
-        'Essencial',
+        'Especial',
         'Kit saboneteira',
         null,
         'Kit para organizar e complementar o lavabo.',
@@ -564,7 +563,7 @@ insert into public.gifts (
     ),
     (
         '35',
-        'Essencial',
+        'Especial',
         'Lixeira de banheiro',
         null,
         'Item funcional para organizar o banheiro com praticidade.',

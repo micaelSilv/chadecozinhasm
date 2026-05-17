@@ -1,7 +1,7 @@
 [
     {
         "id": "01",
-        "category": "Cozinha",
+        "category": "Prestigio",
         "name": "Jogo de panelas",
         "price": null,
         "detail": "Base para cozinhar arroz, feijao, molhos, legumes e refeicoes do dia a dia.",
@@ -11,7 +11,7 @@
     },
     {
         "id": "02",
-        "category": "Cozinha",
+        "category": "Prime",
         "name": "Panela de pressao",
         "price": null,
         "detail": "Essencial para feijao, carnes, cozidos e preparo mais rapido.",
@@ -21,7 +21,7 @@
     },
     {
         "id": "03",
-        "category": "Cozinha",
+        "category": "Especial",
         "name": "Frigideira antiaderente grande",
         "price": null,
         "detail": "Serve para ovos, carnes, legumes, tapioca, panquecas e lanches.",
@@ -31,7 +31,7 @@
     },
     {
         "id": "04",
-        "category": "Cozinha",
+        "category": "Especial",
         "name": "Assadeira retangular",
         "price": null,
         "detail": "Para forno: carnes, lasanha, legumes, bolos simples e gratinados.",
@@ -41,7 +41,7 @@
     },
     {
         "id": "5",
-        "category": "Cozinha",
+        "category": "Prime",
         "name": "Potes",
         "price": null,
         "detail": "Conjunto versatil para armazenar e organizar alimentos.",
@@ -51,7 +51,7 @@
     },
     {
         "id": "6",
-        "category": "Cozinha",
+        "category": "Especial",
         "name": "Travessa de vidro grande",
         "price": null,
         "detail": "Travessa ideal para forno, freezer e servir a mesa.",
@@ -61,7 +61,7 @@
     },
     {
         "id": "7",
-        "category": "Cozinha",
+        "category": "Prime",
         "name": "Potes hermeticos",
         "price": null,
         "detail": "Otimos para manter mantimentos organizados e bem vedados.",
@@ -71,7 +71,7 @@
     },
     {
         "id": "8",
-        "category": "Mesa",
+        "category": "Especial",
         "name": "Jogo de pratos",
         "price": null,
         "detail": "Conjunto de pratos para o dia a dia e ocasioes especiais.",
@@ -81,7 +81,7 @@
     },
     {
         "id": "9",
-        "category": "Mesa",
+        "category": "Especial",
         "name": "Jogo de talheres",
         "price": null,
         "detail": "Conjunto para servir as refeicoes do dia a dia.",
@@ -91,7 +91,7 @@
     },
     {
         "id": "10",
-        "category": "Mesa",
+        "category": "Essencial",
         "name": "Jogo de copos",
         "price": null,
         "detail": "Copos para agua, sucos e momentos especiais.",
@@ -101,7 +101,7 @@
     },
     {
         "id": "11",
-        "category": "Mesa",
+        "category": "Especial",
         "name": "Xicaras",
         "price": null,
         "detail": "Jogo para cafe e cha no dia a dia.",
@@ -111,7 +111,7 @@
     },
     {
         "id": "12",
-        "category": "Mesa",
+        "category": "Prime",
         "name": "Garrafa termica",
         "price": null,
         "detail": "Ideal para manter cafe e bebidas na temperatura certa.",
@@ -121,7 +121,7 @@
     },
     {
         "id": "13",
-        "category": "Mesa",
+        "category": "Especial",
         "name": "Jarra",
         "price": null,
         "detail": "Jarra para agua, sucos e outras bebidas.",
@@ -131,7 +131,7 @@
     },
     {
         "id": "14",
-        "category": "Eletro",
+        "category": "Prestigio",
         "name": "Liquidificador",
         "price": null,
         "detail": "Para vitaminas, sucos, molhos e receitas da casa.",
@@ -141,7 +141,7 @@
     },
     {
         "id": "15",
-        "category": "Eletro",
+        "category": "Prime",
         "name": "Sanduicheira ou grill",
         "price": null,
         "detail": "Pratica para lanches, grelhados e refeicoes rapidas.",
@@ -151,7 +151,7 @@
     },
     {
         "id": "16",
-        "category": "Eletro",
+        "category": "Prestigio",
         "name": "Air fryer",
         "price": null,
         "detail": "Para preparar receitas com praticidade no dia a dia.",
@@ -161,7 +161,7 @@
     },
     {
         "id": "17",
-        "category": "Cozinha",
+        "category": "Prime",
         "name": "Escorredor de louca",
         "price": null,
         "detail": "Ajuda a organizar pratos, copos e talheres apos a lavagem.",
@@ -171,7 +171,7 @@
     },
     {
         "id": "18",
-        "category": "Cozinha",
+        "category": "Especial",
         "name": "Lixeira de cozinha",
         "price": null,
         "detail": "Item pratico para manter a cozinha organizada.",
@@ -181,7 +181,7 @@
     },
     {
         "id": "19",
-        "category": "Cozinha",
+        "category": "Essencial",
         "name": "Tabua de corte",
         "price": null,
         "detail": "Essencial para apoiar o preparo das refeicoes.",
@@ -191,7 +191,7 @@
     },
     {
         "id": "20",
-        "category": "Cozinha",
+        "category": "Especial",
         "name": "Jogo de facas",
         "price": null,
         "detail": "Conjunto para o preparo das refeicoes da casa.",
@@ -201,7 +201,7 @@
     },
     {
         "id": "21",
-        "category": "Cozinha",
+        "category": "Especial",
         "name": "Conjunto de utensilios de cozinha",
         "price": null,
         "detail": "Conjunto pratico para o preparo das refeicoes do dia a dia.",
@@ -211,7 +211,7 @@
     },
     {
         "id": "22",
-        "category": "Cozinha",
+        "category": "Especial",
         "name": "Escorredor de arroz/macarrao",
         "price": null,
         "detail": "Ajuda no preparo e escorrimento de arroz e macarrao.",
@@ -221,7 +221,7 @@
     },
     {
         "id": "23",
-        "category": "Cozinha",
+        "category": "Especial",
         "name": "Tigela grande",
         "price": null,
         "detail": "Util para servir, misturar e preparar receitas maiores.",
@@ -231,7 +231,7 @@
     },
     {
         "id": "24",
-        "category": "Mesa",
+        "category": "Especial",
         "name": "Toalha de mesa",
         "price": null,
         "detail": "Peca para compor e proteger a mesa das refeicoes.",
@@ -241,7 +241,7 @@
     },
     {
         "id": "25",
-        "category": "Eletro",
+        "category": "Prime",
         "name": "Chaleira eletrica",
         "price": null,
         "detail": "Pratica para aquecer agua com rapidez no dia a dia.",
@@ -251,7 +251,7 @@
     },
     {
         "id": "26",
-        "category": "Cozinha",
+        "category": "Essencial",
         "name": "Panos de prato",
         "price": null,
         "detail": "Essenciais para a rotina e organizacao da cozinha.",
@@ -261,7 +261,7 @@
     },
     {
         "id": "27",
-        "category": "Cozinha",
+        "category": "Prime",
         "name": "Porta temperos",
         "price": null,
         "detail": "Ajuda a manter os temperos organizados e ao alcance.",
@@ -271,7 +271,7 @@
     },
     {
         "id": "28",
-        "category": "Casa",
+        "category": "Prestigio",
         "name": "Jogo de cama casal",
         "price": null,
         "detail": "Conjunto para trazer conforto e completar o quarto.",
@@ -281,7 +281,7 @@
     },
     {
         "id": "29",
-        "category": "Casa",
+        "category": "Prime",
         "name": "Travesseiros",
         "price": null,
         "detail": "Par de travesseiros para mais conforto na cama.",
@@ -291,7 +291,7 @@
     },
     {
         "id": "30",
-        "category": "Cozinha",
+        "category": "Essencial",
         "name": "Porta talheres organizador",
         "price": null,
         "detail": "Organizador pratico para manter a gaveta em ordem.",
@@ -301,7 +301,7 @@
     },
     {
         "id": "31",
-        "category": "Casa",
+        "category": "Prestigio",
         "name": "Cobertor",
         "price": null,
         "detail": "Cobertor para deixar as noites mais confortaveis.",
@@ -311,7 +311,7 @@
     },
     {
         "id": "32",
-        "category": "Casa",
+        "category": "Prime",
         "name": "Tolha de banho",
         "price": null,
         "detail": "Jogo para banho e rosto com uso no dia a dia.",
@@ -321,7 +321,7 @@
     },
     {
         "id": "33",
-        "category": "Banheiro",
+        "category": "Especial",
         "name": "Kit saboneteira",
         "price": null,
         "detail": "Kit para organizar e complementar o lavabo.",
@@ -331,7 +331,7 @@
     },
     {
         "id": "34",
-        "category": "Banheiro",
+        "category": "Essencial",
         "name": "Tapete de banheiro",
         "price": null,
         "detail": "Conjunto para deixar o banheiro mais confortavel e seguro.",
@@ -341,7 +341,7 @@
     },
     {
         "id": "35",
-        "category": "Banheiro",
+        "category": "Especial",
         "name": "Lixeira de banheiro",
         "price": null,
         "detail": "Item funcional para organizar o banheiro com praticidade.",
@@ -351,7 +351,7 @@
     },
     {
         "id": "36",
-        "category": "Lavanderia",
+        "category": "Prime",
         "name": "Cesto de roupa suja",
         "price": null,
         "detail": "Ajuda a organizar roupas de forma pratica na lavanderia.",
@@ -361,7 +361,7 @@
     },
     {
         "id": "37",
-        "category": "Lavanderia",
+        "category": "Prime",
         "name": "Varal",
         "price": null,
         "detail": "Varal para secagem pratica das roupas no dia a dia.",
@@ -371,7 +371,7 @@
     },
     {
         "id": "38",
-        "category": "Lavanderia",
+        "category": "Prestigio",
         "name": "Ferro de passar roupa",
         "price": null,
         "detail": "Ferro a vapor para facilitar o cuidado com as roupas.",
@@ -381,7 +381,7 @@
     },
     {
         "id": "39",
-        "category": "Lavanderia",
+        "category": "Prime",
         "name": "Tabua de passar roupa",
         "price": null,
         "detail": "Base pratica para passar roupas com mais conforto.",
@@ -391,7 +391,7 @@
     },
     {
         "id": "40",
-        "category": "Lavanderia",
+        "category": "Prime",
         "name": "Mop",
         "price": null,
         "detail": "Item para limpeza pratica dos ambientes da casa.",

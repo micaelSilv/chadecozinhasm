@@ -35,9 +35,9 @@ const heroImages = [
     "IMGS/Apoidos_Pilar.jpeg",
     "IMGS/Retrato.jpeg"
 ];
-const CATEGORY_ORDER = ["Prestige", "Prime", "Especial", "Essencial"];
+const CATEGORY_ORDER = ["Prestigio", "Prime", "Especial", "Essencial"];
 const CATEGORY_COLORS = {
-    prestige: "gift-category--prestige",
+    prestigio: "gift-category--prestige",
     prime: "gift-category--prime",
     especial: "gift-category--especial",
     essencial: "gift-category--essencial"
@@ -354,6 +354,7 @@ async function loadGiftList(showError = true) {
 
 function renderGiftList() {
     giftGrid.innerHTML = "";
+    const orderedGifts = sortGiftsByCategory(giftItems);
 
     const pixCard = createPixCard();
 
@@ -361,7 +362,7 @@ function renderGiftList() {
         giftGrid.appendChild(pixCard);
     }
 
-    giftItems.forEach((gift) => {
+    orderedGifts.forEach((gift) => {
         const normalizedCategory = normalizeGiftCategory(gift.category);
 
         const card = giftTemplate.content.firstElementChild.cloneNode(true);
@@ -653,8 +654,8 @@ function getCategoryPriority(category) {
 function normalizeGiftCategory(category) {
     const normalizedCategory = String(category || "").trim();
 
-    if (/^prestigio$/i.test(normalizedCategory)) {
-        return "Prestige";
+    if (/^prestige$/i.test(normalizedCategory)) {
+        return "Prestigio";
     }
 
     return normalizedCategory || "Essencial";
