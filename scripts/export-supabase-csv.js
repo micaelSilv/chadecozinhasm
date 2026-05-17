@@ -13,6 +13,8 @@ async function main() {
         "name",
         "price",
         "detail",
+        "purchase_link",
+        "image",
         "sort_order",
         "reserved_by_name",
         "reserved_by_phone",
