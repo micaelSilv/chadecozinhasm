@@ -3,8 +3,10 @@ const giftTemplate = document.querySelector("#gift-card-template");
 const giftSelectionView = document.querySelector("#gift-selection-view");
 const confirmationView = document.querySelector("#confirmation-view");
 const openGiftListButton = document.querySelector("#open-gift-list");
+const heroPhotoShell = document.querySelector(".hero-photo-shell");
 const heroPhoto = document.querySelector(".hero-photo");
 const heroPhotoDots = Array.from(document.querySelectorAll(".hero-photo-dot"));
+const heroCopy = document.querySelector(".hero-copy");
 const selectedGiftName = document.querySelector("#selected-gift-name");
 const confirmationForm = document.querySelector("#confirmation-form");
 const guestNameInput = document.querySelector("#guest-name");
@@ -81,6 +83,10 @@ const giftImageMap = {
 
 initHeroSlideshow();
 loadGiftList();
+syncHeroPhotoHeight();
+
+window.addEventListener("load", syncHeroPhotoHeight);
+window.addEventListener("resize", syncHeroPhotoHeight);
 
 openGiftListButton?.addEventListener("click", (event) => {
     event.preventDefault();
@@ -254,6 +260,19 @@ function updateHeroSlide(activeIndex) {
     heroPhotoDots.forEach((dot, index) => {
         dot.classList.toggle("is-active", index === activeIndex);
     });
+}
+
+function syncHeroPhotoHeight() {
+    if (!heroPhotoShell || !heroCopy) {
+        return;
+    }
+
+    if (window.innerWidth >= 901) {
+        heroPhotoShell.style.height = `${heroCopy.offsetHeight}px`;
+        return;
+    }
+
+    heroPhotoShell.style.height = "";
 }
 
 function setFeedback(type, message) {
