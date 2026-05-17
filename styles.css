@@ -534,11 +534,6 @@ h3 {
     width: 100%;
     justify-self: stretch;
     margin-top: 8px;
-    background: #2f8f4e;
-}
-
-.pix-choice-button:hover {
-    background: #267540;
 }
 
 .gift-card,
