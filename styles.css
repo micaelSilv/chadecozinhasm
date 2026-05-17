@@ -502,6 +502,19 @@ h3 {
     font-weight: 700;
 }
 
+.gift-link {
+    align-self: flex-start;
+    color: var(--text);
+    font-size: 0.94rem;
+    line-height: 1.4;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.gift-link.is-placeholder {
+    opacity: 0.86;
+}
+
 .gift-button:disabled {
     cursor: not-allowed;
     transform: none;
