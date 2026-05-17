@@ -1160,8 +1160,9 @@ h3 {
     }
 
     .gift-card-top {
-        flex-direction: column;
-        align-items: start;
+        flex-direction: row; /* manter badges em linha */
+        justify-content: space-between;
+        align-items: center;
         gap: 8px;
     }
 
