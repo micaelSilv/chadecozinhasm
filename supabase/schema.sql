@@ -12,3 +12,12 @@ create table if not exists public.gifts (
 
 create unique index if not exists gifts_name_key on public.gifts (name);
 create index if not exists gifts_sort_order_idx on public.gifts (sort_order);
+
+create table if not exists public.presence_confirmations (
+    id bigint generated always as identity primary key,
+    guest_name text not null,
+    guest_phone text not null,
+    created_at timestamptz not null default timezone('utc', now())
+);
+
+create index if not exists presence_confirmations_created_at_idx on public.presence_confirmations (created_at desc);

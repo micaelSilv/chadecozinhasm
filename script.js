@@ -3,6 +3,7 @@ const giftTemplate = document.querySelector("#gift-card-template");
 const giftSelectionView = document.querySelector("#gift-selection-view");
 const confirmationView = document.querySelector("#confirmation-view");
 const openGiftListButton = document.querySelector("#open-gift-list");
+const openPresenceModalButton = document.querySelector("#open-presence-modal");
 const floatingHomeButton = document.querySelector("#floating-home-button");
 const heroPhotoShell = document.querySelector(".hero-photo-shell");
 const heroPhoto = document.querySelector(".hero-photo");
@@ -10,9 +11,15 @@ const heroPhotoDots = Array.from(document.querySelectorAll(".hero-photo-dot"));
 const heroCopy = document.querySelector(".hero-copy");
 const selectedGiftName = document.querySelector("#selected-gift-name");
 const confirmationForm = document.querySelector("#confirmation-form");
+const presenceView = document.querySelector("#presence-view");
+const presenceForm = document.querySelector("#presence-form");
+const presenceNameInput = document.querySelector("#presence-name");
+const presencePhoneInput = document.querySelector("#presence-phone");
+const presenceFeedback = document.querySelector("#presence-feedback");
 const guestNameInput = document.querySelector("#guest-name");
 const guestPhoneInput = document.querySelector("#guest-phone");
-const backButton = document.querySelector("#back-button");
+const closeConfirmationModalButton = document.querySelector("#close-confirmation-modal");
+const closePresenceModalButton = document.querySelector("#close-presence-modal");
 const formFeedback = document.querySelector("#form-feedback");
 
 let selectedGiftId = null;
@@ -95,6 +102,10 @@ openGiftListButton?.addEventListener("click", (event) => {
     giftSelectionView.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
+openPresenceModalButton?.addEventListener("click", () => {
+    openPresenceView();
+});
+
 floatingHomeButton?.addEventListener("click", () => {
     openMainView();
 });
@@ -157,10 +168,53 @@ confirmationForm.addEventListener("submit", async (event) => {
     }
 });
 
-backButton.addEventListener("click", () => {
+closeConfirmationModalButton?.addEventListener("click", () => {
     confirmationForm.reset();
     setFeedback("", "");
     openGiftSelection();
+});
+
+closePresenceModalButton?.addEventListener("click", () => {
+    presenceForm?.reset();
+    setPresenceFeedback("", "");
+    closePresenceView();
+});
+
+presenceForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const guestName = presenceNameInput.value.trim();
+    const guestPhone = presencePhoneInput.value.trim();
+
+    if (!guestName || !guestPhone) {
+        return;
+    }
+
+    setPresenceFeedback("", "");
+
+    try {
+        const response = await fetch("/api/presence", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                guestName,
+                guestPhone
+            })
+        });
+
+        const payload = await response.json();
+
+        if (!response.ok) {
+            throw new Error(payload.message || "Nao foi possivel confirmar a presenca.");
+        }
+
+        presenceForm.reset();
+        setPresenceFeedback("success", payload.message || "Presenca confirmada com sucesso.");
+    } catch (error) {
+        setPresenceFeedback("error", error.message);
+    }
 });
 
 confirmationView?.addEventListener("click", (event) => {
@@ -171,11 +225,26 @@ confirmationView?.addEventListener("click", (event) => {
     }
 });
 
+presenceView?.addEventListener("click", (event) => {
+    if (event.target === presenceView) {
+        presenceForm?.reset();
+        setPresenceFeedback("", "");
+        closePresenceView();
+    }
+});
+
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !confirmationView.classList.contains("hidden")) {
         confirmationForm.reset();
         setFeedback("", "");
         openGiftSelection();
+        return;
+    }
+
+    if (event.key === "Escape" && presenceView && !presenceView.classList.contains("hidden")) {
+        presenceForm?.reset();
+        setPresenceFeedback("", "");
+        closePresenceView();
     }
 });
 
@@ -262,6 +331,7 @@ function openConfirmationView(giftId) {
     floatingHomeButton?.classList.remove("hidden");
     giftSelectionView.classList.remove("hidden");
     confirmationView.classList.remove("hidden");
+    syncModalState();
 }
 
 function openGiftSelection() {
@@ -270,17 +340,34 @@ function openGiftSelection() {
     floatingHomeButton?.classList.remove("hidden");
     confirmationView.classList.add("hidden");
     giftSelectionView.classList.remove("hidden");
+    syncModalState();
 }
 
 function openMainView() {
     selectedGiftId = null;
     setFeedback("", "");
     confirmationForm.reset();
+    presenceForm?.reset();
+    setPresenceFeedback("", "");
     document.body.classList.remove("list-view");
     floatingHomeButton?.classList.add("hidden");
     confirmationView.classList.add("hidden");
+    presenceView?.classList.add("hidden");
     giftSelectionView.classList.add("hidden");
+    syncModalState();
     window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function openPresenceView() {
+    presenceForm?.reset();
+    setPresenceFeedback("", "");
+    presenceView?.classList.remove("hidden");
+    syncModalState();
+}
+
+function closePresenceView() {
+    presenceView?.classList.add("hidden");
+    syncModalState();
 }
 
 function initHeroSlideshow() {
@@ -322,6 +409,11 @@ function syncHeroPhotoHeight() {
     heroPhotoShell.style.height = "";
 }
 
+function syncModalState() {
+    const hasOpenModal = [confirmationView, presenceView].some((modal) => modal && !modal.classList.contains("hidden"));
+    document.body.classList.toggle("modal-open", hasOpenModal);
+}
+
 function setFeedback(type, message) {
     formFeedback.textContent = message;
     formFeedback.classList.remove("hidden", "error", "success");
@@ -333,6 +425,19 @@ function setFeedback(type, message) {
 
     formFeedback.classList.add(type);
 }
+
+function setPresenceFeedback(type, message) {
+    presenceFeedback.textContent = message;
+    presenceFeedback.classList.remove("hidden", "error", "success");
+
+    if (!message) {
+        presenceFeedback.classList.add("hidden");
+        return;
+    }
+
+    presenceFeedback.classList.add(type);
+}
+
 function getGiftImage(gift) {
     return giftImageMap[gift.id] || gift.image || "IMGS/Apoidos_Pilar.jpeg";
 }

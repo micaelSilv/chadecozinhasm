@@ -95,7 +95,7 @@
                         <h2 class="action-title">Confirmar Presença</h2>
                         <p class="action-text">Sua presença tornará nosso dia ainda mais especial.</p>
                     </div>
-                    <button class="button button-primary" type="button">
+                    <button class="button button-primary" id="open-presence-modal" type="button">
                         <span class="button-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" role="presentation">
                                 <path d="M4 6.5H20C20.6 6.5 21 6.9 21 7.5V16.5C21 17.1 20.6 17.5 20 17.5H4C3.4 17.5 3 17.1 3 16.5V7.5C3 6.9 3.4 6.5 4 6.5Z"></path>
@@ -124,7 +124,7 @@
 
             <section class="confirmation-section hidden" id="confirmation-view" aria-live="polite" role="dialog" aria-modal="true" aria-labelledby="selected-gift-name">
                 <div class="confirmation-card">
-                    <button class="back-button" id="back-button" type="button" aria-label="Fechar popup">
+                    <button class="modal-close-button" id="close-confirmation-modal" type="button" aria-label="Fechar popup">
                         <span aria-hidden="true">&times;</span>
                     </button>
 
@@ -149,6 +149,36 @@
                         <p class="form-feedback hidden" id="form-feedback" aria-live="polite"></p>
 
                         <button class="primary-button" type="submit">Confirmar presente</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="confirmation-section hidden" id="presence-view" aria-live="polite" role="dialog" aria-modal="true" aria-labelledby="presence-title">
+                <div class="confirmation-card">
+                    <button class="modal-close-button" id="close-presence-modal" type="button" aria-label="Fechar popup">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <p class="section-kicker">Confirmar presença</p>
+                    <h2 id="presence-title">Sua presença no chá</h2>
+                    <p class="confirmation-text">
+                        Preencha seus dados para confirmar sua presença. Vamos adorar compartilhar esse momento com você.
+                    </p>
+
+                    <form id="presence-form" class="confirmation-form">
+                        <label>
+                            <span>Seu nome</span>
+                            <input id="presence-name" name="guestName" type="text" placeholder="Digite seu nome" required>
+                        </label>
+
+                        <label>
+                            <span>Celular</span>
+                            <input id="presence-phone" name="guestPhone" type="tel" placeholder="(00) 00000-0000" required>
+                        </label>
+
+                        <p class="form-feedback hidden" id="presence-feedback" aria-live="polite"></p>
+
+                        <button class="primary-button" type="submit">Confirmar presença</button>
                     </form>
                 </div>
             </section>

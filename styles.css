@@ -28,6 +28,10 @@ body {
     font-family: "Manrope", sans-serif;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 button,
 input {
     font: inherit;
@@ -543,7 +547,7 @@ h3 {
     backdrop-filter: blur(6px);
 }
 
-.back-button {
+.modal-close-button {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -560,7 +564,7 @@ h3 {
     cursor: pointer;
 }
 
-.back-button span {
+.modal-close-button span {
     display: block;
     font-size: 1.5rem;
     line-height: 1;
@@ -878,7 +882,7 @@ h3 {
         border-radius: 24px;
     }
 
-    .back-button {
+    .modal-close-button {
         top: 12px;
         right: 12px;
     }
