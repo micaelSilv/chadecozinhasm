@@ -616,7 +616,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     gap: 8px;
-    align-items: start;
+    align-items: center;
 }
 
 .gift-card h3,
@@ -633,6 +633,7 @@ h3 {
     color: #ffffff;
     font-size: 0.72rem;
     font-weight: 800;
+    order: 0; /* garantir posição à esquerda */
 }
 
 .gift-category--prestige {
@@ -662,6 +663,7 @@ h3 {
     background: #f4f1ea;
     font-size: 0.72rem;
     font-weight: 700;
+    order: 1; /* garantir posição à direita */
 }
 
 .gift-status.available {
