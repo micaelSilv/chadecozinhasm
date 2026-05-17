@@ -862,7 +862,7 @@ h3 {
     .page-shell {
         width: 100%;
         margin: 0;
-        padding: 0 0 56px;
+        padding: 0 18px 56px; /* aumentar espaçamento lateral no mobile */
     }
 
     .hero-grid,
@@ -873,7 +873,7 @@ h3 {
 
     .gift-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 12px;
     }
 
     .hero-grid {
@@ -886,8 +886,19 @@ h3 {
     }
 
     main {
-        width: min(100% - 32px, 100%);
+        width: min(100% - 36px, 100%);
         margin: 0 auto;
+    }
+
+    /* Card sizing/layout tweaks for mobile: diminuir visual dos cards e centrar com margens */
+    .gift-card {
+        padding: 8px 10px; /* menor padding para cards mais compactos */
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gift-image-wrap {
+        width: 100%; /* garantir que imagem respeite padding do container */
     }
 
     .hero-photo-shell {
