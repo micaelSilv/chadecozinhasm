@@ -270,6 +270,13 @@ svg {
     border-left: 0;
 }
 
+/* Make both action cards (Lista de Presentes and Confirmar Presença) wider: 95% of page and centered */
+.action-band .action-block {
+    grid-column: 1 / -1; /* span full grid */
+    width: 95%;
+    justify-self: center;
+}
+
 /* Keep action-blocks equal width (no special-case first-child) */
 /* Removed single-column restriction so both action-blocks share layout */
 
