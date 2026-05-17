@@ -545,8 +545,8 @@ h3 {
 
 .back-button {
     position: absolute;
-    top: 18px;
-    right: 18px;
+    top: 16px;
+    right: 16px;
     margin: 0;
     display: inline-flex;
     align-items: center;
