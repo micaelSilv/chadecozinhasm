@@ -391,6 +391,7 @@ function renderGiftList() {
         status.classList.remove("available", "confirmed");
         card.classList.remove("gift-card--prestige", "gift-card--prime", "gift-card--especial", "gift-card--essencial");
         card.classList.add(`gift-card--${categoryClassName.replace("gift-category--", "")}`);
+        owner.classList.remove("hidden");
 
         if (gift.reservedBy) {
             status.textContent = "Confirmado";
@@ -398,13 +399,14 @@ function renderGiftList() {
             actionButton.textContent = "Indisponível";
             actionButton.disabled = true;
             owner.textContent = `Reservado por ${gift.reservedBy.guestName}`;
-            owner.classList.remove("hidden");
         } else {
             status.textContent = "Disponível";
             status.classList.add("available");
             giftLink.classList.add("available");
             actionButton.textContent = "Pegar";
+            actionButton.disabled = false;
             actionButton.dataset.giftId = gift.id;
+            owner.textContent = "Ainda nao reservado";
         }
 
         giftGrid.appendChild(card);

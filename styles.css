@@ -445,12 +445,12 @@ h3 {
 .gift-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
+    gap: 7px; /* reduzido de 10px */
 }
 
 .gift-card-pix {
     position: relative;
-    gap: 16px;
+    gap: 11px; /* reduzido de 14px */
     border-width: 3px;
     border-style: solid;
     border-color: #2f8f4e;
@@ -541,7 +541,7 @@ h3 {
 .gift-card,
 .confirmation-card {
     border: 1px solid var(--border);
-    border-radius: 28px;
+    border-radius: 16px; /* reduzido de 22px */
     background: var(--surface);
     box-shadow: var(--shadow-soft);
 }
@@ -549,8 +549,8 @@ h3 {
 .gift-card {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 16px;
+    gap: 5px; /* reduzido de 7px */
+    padding: 9px; /* reduzido de 13px */
     transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -590,7 +590,7 @@ h3 {
 .gift-image-wrap {
     margin: 0;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 8px; /* reduzido de 12px */
     aspect-ratio: 1 / 0.82;
     background: var(--surface-muted);
 }
@@ -860,7 +860,7 @@ h3 {
 
     .gift-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 10px;
     }
 
     .hero-grid {
@@ -945,7 +945,7 @@ h3 {
     }
 
     .gift-card-pix {
-        padding: 18px 16px;
+        padding: 15px 12px;
     }
 
     .pix-card-main {
@@ -1040,31 +1040,31 @@ h3 {
     }
 
     .gift-grid {
-        gap: 8px;
+        gap: 7px; /* reduzido de 8px */
     }
 
     .gift-card,
     .confirmation-card,
     .action-block {
-        padding: 20px;
-        border-radius: 24px;
+        padding: 17px; /* reduzido de 20px */
+        border-radius: 20px; /* reduzido de 24px */
     }
 
     .gift-card {
-        gap: 8px;
-        padding: 9px;
-        border-radius: 18px;
+        gap: 7px; /* reduzido de 8px */
+        padding: 8px; /* reduzido de 9px */
+        border-radius: 15px; /* reduzido de 18px */
     }
 
     .gift-card-pix {
-        gap: 12px;
-        padding: 12px 11px;
-        border-radius: 18px;
+        gap: 10px; /* reduzido de 12px */
+        padding: 10px 9px; /* reduzido de 12px 11px */
+        border-radius: 15px; /* reduzido de 18px */
     }
 
     .gift-card h3,
     .gift-card-pix h3 {
-        font-size: 1.18rem;
+        font-size: 1.06rem; /* reduzido de 1.18rem */
         line-height: 1.02;
     }
 
@@ -1125,8 +1125,8 @@ h3 {
     }
 
     .gift-image-wrap {
-        border-radius: 14px;
-        aspect-ratio: 1 / 0.9;
+        border-radius: 11px; /* reduzido de 14px */
+        aspect-ratio: 1 / 0.82; /* igualar ao desktop, reduzido de 0.9 */
     }
 
     .gift-card-top {
