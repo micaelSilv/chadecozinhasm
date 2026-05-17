@@ -491,9 +491,9 @@ h3 {
 }
 
 .gift-status.confirmed {
-    border-color: #efc9c9;
-    background: #fdeaea;
-    color: #8d3e3e;
+    border-color: #4a4a4a;
+    background: #4a4a4a;
+    color: #ffffff;
 }
 
 .gift-button,
