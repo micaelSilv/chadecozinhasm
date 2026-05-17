@@ -40,6 +40,46 @@
         "reservedBy": null
     },
     {
+        "id": "5",
+        "category": "Cozinha",
+        "name": "Potes",
+        "price": null,
+        "detail": "Conjunto versatil para armazenar e organizar alimentos.",
+        "purchaseLink": "https://www.mercadolivre.com.br/kit-4-potes-vidro-1040ml-hermetico-marmita-forno-refratario/up/MLBU3534134664?pdp_filters=item_id%3AMLB4283700061&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4283700061",
+        "image": "IMGS/produtos/5.jpeg",
+        "reservedBy": null
+    },
+    {
+        "id": "6",
+        "category": "Cozinha",
+        "name": "Travessa de vidro grande",
+        "price": null,
+        "detail": "Travessa ideal para forno, freezer e servir a mesa.",
+        "purchaseLink": "https://www.mercadolivre.com.br/kit-2-travessas-de-vidro-forno-freezer-marinex-pirex-grande/up/MLBU3544504490?pdp_filters=item_id%3AMLB5905336188&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5905336188",
+        "image": "IMGS/produtos/6.jpeg",
+        "reservedBy": null
+    },
+    {
+        "id": "7",
+        "category": "Cozinha",
+        "name": "Potes hermeticos",
+        "price": null,
+        "detail": "Otimos para manter mantimentos organizados e bem vedados.",
+        "purchaseLink": "https://www.mercadolivre.com.br/kit-10-organizadores-pote-hermetico-empilhavel-em-acrilico-cor-transparente/p/MLB68593211?pdp_filters=item_id%3AMLB4633860471&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4633860471",
+        "image": "IMGS/produtos/7.jpeg",
+        "reservedBy": null
+    },
+    {
+        "id": "8",
+        "category": "Mesa",
+        "name": "Jogo de pratos",
+        "price": null,
+        "detail": "Conjunto de pratos para o dia a dia e ocasioes especiais.",
+        "purchaseLink": "https://www.mercadolivre.com.br/jogo-6-pratos-rasos-grande-vidro-branco-25cm-restaurante/up/MLBU3503321287?pdp_filters=item_id%3AMLB5832115552&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5832115552",
+        "image": "IMGS/produtos/1.jpeg",
+        "reservedBy": null
+    },
+    {
         "id": "9",
         "category": "Mesa",
         "name": "Jogo de talheres",
@@ -177,6 +217,16 @@
         "detail": "Ajuda no preparo e escorrimento de arroz e macarrao.",
         "purchaseLink": "https://www.mercadolivre.com.br/kit-escorredor-de-macarrao-24cm--escorredor-arroz-inox-26cm/up/MLBU2220575429?pdp_filters=item_id%3AMLB3175145613&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB3175145613",
         "image": "IMGS/produtos/22.jpeg",
+        "reservedBy": null
+    },
+    {
+        "id": "23",
+        "category": "Cozinha",
+        "name": "Tigela grande",
+        "price": null,
+        "detail": "Util para servir, misturar e preparar receitas maiores.",
+        "purchaseLink": "https://www.mercadolivre.com.br/conjunto-3-bacias-tigelas-saladeiras-bowl-inox-3-litros/up/MLBU803087994?pdp_filters=item_id%3AMLB4540747558&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4540747558",
+        "image": "IMGS/produtos/23.jpeg",
         "reservedBy": null
     }
 ]

@@ -104,6 +104,58 @@ insert into public.gifts (
         null
     ),
     (
+        '5',
+        'Cozinha',
+        'Potes',
+        null,
+        'Conjunto versatil para armazenar e organizar alimentos.',
+        'https://www.mercadolivre.com.br/kit-4-potes-vidro-1040ml-hermetico-marmita-forno-refratario/up/MLBU3534134664?pdp_filters=item_id%3AMLB4283700061&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4283700061',
+        'IMGS/produtos/5.jpeg',
+        4,
+        null,
+        null,
+        null
+    ),
+    (
+        '6',
+        'Cozinha',
+        'Travessa de vidro grande',
+        null,
+        'Travessa ideal para forno, freezer e servir a mesa.',
+        'https://www.mercadolivre.com.br/kit-2-travessas-de-vidro-forno-freezer-marinex-pirex-grande/up/MLBU3544504490?pdp_filters=item_id%3AMLB5905336188&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5905336188',
+        'IMGS/produtos/6.jpeg',
+        5,
+        null,
+        null,
+        null
+    ),
+    (
+        '7',
+        'Cozinha',
+        'Potes hermeticos',
+        null,
+        'Otimos para manter mantimentos organizados e bem vedados.',
+        'https://www.mercadolivre.com.br/kit-10-organizadores-pote-hermetico-empilhavel-em-acrilico-cor-transparente/p/MLB68593211?pdp_filters=item_id%3AMLB4633860471&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4633860471',
+        'IMGS/produtos/7.jpeg',
+        6,
+        null,
+        null,
+        null
+    ),
+    (
+        '8',
+        'Mesa',
+        'Jogo de pratos',
+        null,
+        'Conjunto de pratos para o dia a dia e ocasioes especiais.',
+        'https://www.mercadolivre.com.br/jogo-6-pratos-rasos-grande-vidro-branco-25cm-restaurante/up/MLBU3503321287?pdp_filters=item_id%3AMLB5832115552&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5832115552',
+        'IMGS/produtos/1.jpeg',
+        7,
+        null,
+        null,
+        null
+    ),
+    (
         '9',
         'Mesa',
         'Jogo de talheres',
@@ -111,7 +163,7 @@ insert into public.gifts (
         'Conjunto para servir as refeicoes do dia a dia.',
         'https://www.mercadolivre.com.br/faqueiro-24-pecas-buzios-inox-23799071-tramontina-cor-cinza-claro/p/MLB36638741?pdp_filters=item_id%3AMLB5214565886&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5214565886',
         'IMGS/produtos/9.jpeg',
-        4,
+        8,
         null,
         null,
         null
@@ -124,7 +176,7 @@ insert into public.gifts (
         'Copos para agua, sucos e momentos especiais.',
         'https://www.mercadolivre.com.br/jogo-6-copos-de-vidro-canelado-cameratta-agua-suco-420ml/up/MLBU3216811619?pdp_filters=item_id%3AMLB4085176731&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4085176731',
         'IMGS/produtos/10.jpeg',
-        5,
+        9,
         null,
         null,
         null
@@ -137,7 +189,7 @@ insert into public.gifts (
         'Jogo para cafe e cha no dia a dia.',
         'https://www.mercadolivre.com.br/jogo-de-xicara-com-pires-6-pecas-brasiliano-vidro-cafe-cha/up/MLBU3563750460?pdp_filters=item_id%3AMLB5933197116&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5933197116',
         'IMGS/produtos/11.jpeg',
-        6,
+        10,
         null,
         null,
         null
@@ -150,7 +202,7 @@ insert into public.gifts (
         'Ideal para manter cafe e bebidas na temperatura certa.',
         'https://www.mercadolivre.com.br/garrafa-termica-lumina-9751-termolar-1-litro-aco-inox/p/MLB29554584?pdp_filters=item_id%3AMLB5361809522&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5361809522',
         'IMGS/produtos/12.jpeg',
-        7,
+        11,
         null,
         null,
         null
@@ -163,7 +215,7 @@ insert into public.gifts (
         'Jarra para agua, sucos e outras bebidas.',
         'https://www.mercadolivre.com.br/jarra-de-vidro-tampa-higienica-inox-1-litro-borossilicato/up/MLBU3827967757?pdp_filters=item_id%3AMLB4516227995&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4516227995',
         'IMGS/produtos/13.jpeg',
-        8,
+        12,
         null,
         null,
         null
@@ -176,7 +228,7 @@ insert into public.gifts (
         'Para vitaminas, sucos, molhos e receitas da casa.',
         'https://www.mercadolivre.com.br/liquidificador-com-15-velocidades-oster-de-1400w-potente/up/MLBU2142765421?pdp_filters=item_id%3AMLB4543427767&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4543427767',
         'IMGS/produtos/14.jpeg',
-        9,
+        13,
         null,
         null,
         null
@@ -189,7 +241,7 @@ insert into public.gifts (
         'Pratica para lanches, grelhados e refeicoes rapidas.',
         'https://www.mercadolivre.com.br/sanduicheira-e-grill-pgr21pi-maxx-clean-1000w-philco-prateado/p/MLB28017294?pdp_filters=item_id%3AMLB3509498657&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB3509498657',
         'IMGS/produtos/15.jpeg',
-        10,
+        14,
         null,
         null,
         null
@@ -202,7 +254,7 @@ insert into public.gifts (
         'Para preparar receitas com praticidade no dia a dia.',
         'https://www.mercadolivre.com.br/air-fryer-philco-55l-revestimento-redstone-1500w-paf55b/p/MLB49952088?pdp_filters=item_id%3AMLB4317772143&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4317772143',
         'IMGS/produtos/16.jpeg',
-        11,
+        15,
         null,
         null,
         null
@@ -215,7 +267,7 @@ insert into public.gifts (
         'Ajuda a organizar pratos, copos e talheres apos a lavagem.',
         'https://www.mercadolivre.com.br/escorredor-de-louca-inox-20-pratos-2-andares-porta-talheres-prateado/p/MLB36202148?pdp_filters=item_id%3AMLB4100648425&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4100648425',
         'IMGS/produtos/17.jpeg',
-        12,
+        16,
         null,
         null,
         null
@@ -228,7 +280,7 @@ insert into public.gifts (
         'Item pratico para manter a cozinha organizada.',
         'https://www.mercadolivre.com.br/dispenser-sabao-detergente-lixeira-e-rodinho-kit-cozinha/up/MLBU757567821?pdp_filters=item_id%3AMLB3280727197&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB3280727197',
         'IMGS/produtos/18.jpeg',
-        13,
+        17,
         null,
         null,
         null
@@ -241,7 +293,7 @@ insert into public.gifts (
         'Essencial para apoiar o preparo das refeicoes.',
         'https://www.mercadolivre.com.br/tabua-de-vidro-temperado-pcarne-churrasco-higienica-fume/up/MLBU2173927220?pdp_filters=item_id%3AMLB2678350207&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB2678350207',
         'IMGS/produtos/19.png',
-        14,
+        18,
         null,
         null,
         null
@@ -254,7 +306,7 @@ insert into public.gifts (
         'Conjunto para o preparo das refeicoes da casa.',
         'https://www.mercadolivre.com.br/jogo-de-facas-faqueiro-9-pecas-plenus-aco-inox-tramontina/p/MLB28408264?pdp_filters=item_id%3AMLB3782589243&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB3782589243',
         'IMGS/produtos/20.jpeg',
-        15,
+        19,
         null,
         null,
         null
@@ -267,7 +319,7 @@ insert into public.gifts (
         'Conjunto pratico para o preparo das refeicoes do dia a dia.',
         'https://www.mercadolivre.com.br/conjunto-utensilios-profissional-10-pecas-cozinha-silicone/up/MLBU1729594100?pdp_filters=item_id%3AMLB5636036574&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5636036574',
         'IMGS/produtos/21.jpeg',
-        16,
+        20,
         null,
         null,
         null
@@ -280,7 +332,20 @@ insert into public.gifts (
         'Ajuda no preparo e escorrimento de arroz e macarrao.',
         'https://www.mercadolivre.com.br/kit-escorredor-de-macarrao-24cm--escorredor-arroz-inox-26cm/up/MLBU2220575429?pdp_filters=item_id%3AMLB3175145613&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB3175145613',
         'IMGS/produtos/22.jpeg',
-        17,
+        21,
+        null,
+        null,
+        null
+    ),
+    (
+        '23',
+        'Cozinha',
+        'Tigela grande',
+        null,
+        'Util para servir, misturar e preparar receitas maiores.',
+        'https://www.mercadolivre.com.br/conjunto-3-bacias-tigelas-saladeiras-bowl-inox-3-litros/up/MLBU803087994?pdp_filters=item_id%3AMLB4540747558&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB4540747558',
+        'IMGS/produtos/23.jpeg',
+        22,
         null,
         null,
         null
