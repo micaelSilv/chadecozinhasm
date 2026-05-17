@@ -35,6 +35,13 @@ const heroImages = [
     "IMGS/Apoidos_Pilar.jpeg",
     "IMGS/Retrato.jpeg"
 ];
+const CATEGORY_ORDER = ["Prestige", "Prime", "Especial", "Essencial"];
+const CATEGORY_COLORS = {
+    prestige: "gift-category--prestige",
+    prime: "gift-category--prime",
+    especial: "gift-category--especial",
+    essencial: "gift-category--essencial"
+};
 const giftImageMap = {
     "01": "IMGS/produtos/1.jpeg",
     "02": "IMGS/produtos/2.jpeg",
@@ -354,17 +361,30 @@ function renderGiftList() {
         giftGrid.appendChild(pixCard);
     }
 
-    giftItems.forEach((gift) => {
+    let activeCategory = null;
+
+    sortGiftsByCategory(giftItems).forEach((gift) => {
+        const normalizedCategory = normalizeGiftCategory(gift.category);
+
+        if (normalizedCategory !== activeCategory) {
+            giftGrid.appendChild(createCategoryHeading(normalizedCategory));
+            activeCategory = normalizedCategory;
+        }
+
         const card = giftTemplate.content.firstElementChild.cloneNode(true);
         const image = card.querySelector(".gift-image");
+        const category = card.querySelector(".gift-category");
         const status = card.querySelector(".gift-status");
         const giftName = card.querySelector(".gift-name");
         const giftLink = card.querySelector(".gift-link");
         const actionButton = card.querySelector(".gift-button");
         const owner = card.querySelector(".gift-owner");
+        const categoryClassName = getCategoryClassName(normalizedCategory);
 
         setGiftImage(image, gift);
         image.alt = gift.name;
+        category.textContent = normalizedCategory;
+        category.className = `gift-category ${categoryClassName}`;
         giftName.textContent = gift.name;
         giftLink.href = gift.purchaseLink || "#";
         giftLink.classList.remove("available");
@@ -375,6 +395,8 @@ function renderGiftList() {
             }
         });
         status.classList.remove("available", "confirmed");
+        card.classList.remove("gift-card--prestige", "gift-card--prime", "gift-card--especial", "gift-card--essencial");
+        card.classList.add(`gift-card--${categoryClassName.replace("gift-category--", "")}`);
 
         if (gift.reservedBy) {
             status.textContent = "Confirmado";
@@ -414,6 +436,16 @@ function createPixCard() {
     }
 
     return pixCard;
+}
+
+function createCategoryHeading(category) {
+    const heading = document.createElement("div");
+    const categoryClassName = getCategoryClassName(category);
+
+    heading.className = `gift-category-heading ${categoryClassName}`;
+    heading.textContent = category;
+
+    return heading;
 }
 
 function openConfirmationView(giftId) {
@@ -612,4 +644,39 @@ function normalizeImagePath(imagePath) {
         .replace(/^\/+/, "");
 
     return `/${normalizedPath}`;
+}
+
+function sortGiftsByCategory(gifts) {
+    return gifts
+        .map((gift, index) => ({ gift, index }))
+        .sort((leftGift, rightGift) => {
+            const categoryDifference = getCategoryPriority(leftGift.gift.category) - getCategoryPriority(rightGift.gift.category);
+
+            if (categoryDifference !== 0) {
+                return categoryDifference;
+            }
+
+            return leftGift.index - rightGift.index;
+        })
+        .map(({ gift }) => gift);
+}
+
+function getCategoryPriority(category) {
+    const priority = CATEGORY_ORDER.indexOf(normalizeGiftCategory(category));
+
+    return priority === -1 ? CATEGORY_ORDER.length : priority;
+}
+
+function normalizeGiftCategory(category) {
+    const normalizedCategory = String(category || "").trim();
+
+    if (/^prestigio$/i.test(normalizedCategory)) {
+        return "Prestige";
+    }
+
+    return normalizedCategory || "Essencial";
+}
+
+function getCategoryClassName(category) {
+    return CATEGORY_COLORS[normalizeGiftCategory(category).toLowerCase()] || "gift-category--essencial";
 }
