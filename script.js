@@ -191,7 +191,6 @@ function renderGiftList() {
         const image = card.querySelector(".gift-image");
         const status = card.querySelector(".gift-status");
         const giftName = card.querySelector(".gift-name");
-        const giftCategory = card.querySelector(".gift-category");
         const giftDetail = card.querySelector(".gift-detail");
         const giftLink = card.querySelector(".gift-link");
         const actionButton = card.querySelector(".gift-button");
@@ -202,7 +201,6 @@ function renderGiftList() {
         image.addEventListener("error", () => {
             image.src = "IMGS/Apoidos_Pilar.jpeg";
         }, { once: true });
-        giftCategory.textContent = gift.category;
         giftName.textContent = gift.name;
         giftDetail.textContent = gift.detail;
         giftLink.href = gift.purchaseLink || "#";
