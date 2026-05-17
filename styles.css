@@ -449,10 +449,8 @@ h3 {
 }
 
 .gift-card-pix {
-    grid-column: 1 / -1;
     position: relative;
-    gap: 22px;
-    padding: 28px;
+    gap: 18px;
     border-color: rgba(58, 107, 76, 0.14);
     background: linear-gradient(145deg, #fbfff9 0%, #f2f8ef 58%, #eef5ea 100%);
     box-shadow: 0 18px 40px rgba(38, 68, 46, 0.08);
@@ -511,7 +509,7 @@ h3 {
 .pix-key-card {
     display: grid;
     gap: 6px;
-    padding: 16px 18px;
+    padding: 14px 16px;
     border: 1px solid rgba(47, 143, 78, 0.16);
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.76);
@@ -533,8 +531,8 @@ h3 {
 }
 
 .pix-choice-button {
-    width: auto;
-    justify-self: start;
+    width: 100%;
+    justify-self: stretch;
     margin-top: 8px;
     background: #2f8f4e;
 }
