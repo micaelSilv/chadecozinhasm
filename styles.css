@@ -497,18 +497,8 @@ h3 {
 .pix-proof {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0;
     margin-top: 4px;
-}
-
-.pix-proof-avatar {
-    width: 28px;
-    height: 28px;
-    margin-right: -8px;
-    border: 2px solid #ffffff;
-    border-radius: 999px;
-    background: linear-gradient(145deg, #d9ecd6, #b9d7c0);
-    box-shadow: 0 6px 14px rgba(47, 143, 78, 0.14);
 }
 
 .pix-proof-text {
@@ -540,6 +530,17 @@ h3 {
     font-size: 1.2rem;
     font-weight: 800;
     letter-spacing: 0.04em;
+}
+
+.pix-choice-button {
+    width: auto;
+    justify-self: start;
+    margin-top: 8px;
+    background: #2f8f4e;
+}
+
+.pix-choice-button:hover {
+    background: #267540;
 }
 
 .gift-card,

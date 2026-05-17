@@ -10,8 +10,11 @@ const heroPhotoShell = document.querySelector(".hero-photo-shell");
 const heroPhoto = document.querySelector(".hero-photo");
 const heroPhotoDots = Array.from(document.querySelectorAll(".hero-photo-dot"));
 const heroCopy = document.querySelector(".hero-copy");
+const confirmationKicker = confirmationView?.querySelector(".section-kicker");
 const selectedGiftName = document.querySelector("#selected-gift-name");
+const confirmationText = confirmationView?.querySelector(".confirmation-text");
 const confirmationForm = document.querySelector("#confirmation-form");
+const confirmationSubmitButton = confirmationForm?.querySelector("button[type='submit']");
 const presenceView = document.querySelector("#presence-view");
 const presenceForm = document.querySelector("#presence-form");
 const presenceNameInput = document.querySelector("#presence-name");
@@ -24,6 +27,7 @@ const closePresenceModalButton = document.querySelector("#close-presence-modal")
 const formFeedback = document.querySelector("#form-feedback");
 
 let selectedGiftId = null;
+let confirmationMode = "gift";
 let giftItems = [];
 const heroImages = [
     "IMGS/Nobanco.jpeg",
@@ -112,6 +116,13 @@ floatingHomeButton?.addEventListener("click", () => {
 });
 
 giftGrid.addEventListener("click", (event) => {
+    const pixTrigger = event.target.closest("button[data-pix-choice]");
+
+    if (pixTrigger) {
+        openPixChoiceView();
+        return;
+    }
+
     const trigger = event.target.closest("button[data-gift-id]");
 
     if (!trigger) {
@@ -126,10 +137,6 @@ giftGrid.addEventListener("click", (event) => {
 confirmationForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    if (!selectedGiftId) {
-        return;
-    }
-
     const guestName = guestNameInput.value.trim();
     const guestPhone = guestPhoneInput.value.trim();
 
@@ -140,32 +147,54 @@ confirmationForm.addEventListener("submit", async (event) => {
     setFeedback("", "");
 
     try {
-        const response = await fetch("/api/confirm", {
+        const requestOptions = confirmationMode === "pix"
+            ? {
+                url: "/api/pix",
+                body: JSON.stringify({ guestName, guestPhone }),
+                successMessage: "Escolha via Pix confirmada com sucesso."
+            }
+            : {
+                url: "/api/confirm",
+                body: JSON.stringify({
+                    giftId: selectedGiftId,
+                    guestName,
+                    guestPhone
+                }),
+                successMessage: "Presente confirmado com sucesso."
+            };
+
+        if (confirmationMode === "gift" && !selectedGiftId) {
+            return;
+        }
+
+        const response = await fetch(requestOptions.url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                giftId: selectedGiftId,
-                guestName,
-                guestPhone
-            })
+            body: requestOptions.body
         });
 
         const payload = await response.json();
 
         if (!response.ok) {
-            throw new Error(payload.message || "Nao foi possivel confirmar o presente.");
+            throw new Error(payload.message || (confirmationMode === "pix" ? "Nao foi possivel confirmar a escolha via Pix." : "Nao foi possivel confirmar o presente."));
         }
 
-        giftItems = payload.gifts;
+        if (confirmationMode === "gift" && payload.gifts) {
+            giftItems = payload.gifts;
+            renderGiftList();
+        }
+
         confirmationForm.reset();
-        setFeedback("success", "Presente confirmado com sucesso.");
+        setFeedback("success", payload.message || requestOptions.successMessage);
         openGiftSelection();
-        renderGiftList();
     } catch (error) {
         setFeedback("error", error.message);
-        await loadGiftList(false);
+
+        if (confirmationMode === "gift") {
+            await loadGiftList(false);
+        }
     }
 });
 
@@ -336,8 +365,39 @@ function openConfirmationView(giftId) {
     }
 
     selectedGiftId = giftId;
+    confirmationMode = "gift";
     setFeedback("", "");
+    if (confirmationKicker) {
+        confirmationKicker.textContent = "Reserva do presente";
+    }
     selectedGiftName.textContent = selectedGift.name;
+    if (confirmationText) {
+        confirmationText.textContent = "Preencha seus dados para assumir este presente. Depois da confirmação, ele ficará indisponível para os próximos convidados.";
+    }
+    if (confirmationSubmitButton) {
+        confirmationSubmitButton.textContent = "Confirmar presente";
+    }
+    document.body.classList.add("list-view");
+    floatingHomeButton?.classList.remove("hidden");
+    giftSelectionView.classList.remove("hidden");
+    confirmationView.classList.remove("hidden");
+    syncModalState();
+}
+
+function openPixChoiceView() {
+    selectedGiftId = null;
+    confirmationMode = "pix";
+    setFeedback("", "");
+    if (confirmationKicker) {
+        confirmationKicker.textContent = "Escolha via Pix";
+    }
+    selectedGiftName.textContent = "Contribuir com Pix";
+    if (confirmationText) {
+        confirmationText.textContent = "Preencha seus dados para avisar que você escolheu presentear via Pix. Essa opção continua disponível para outras pessoas também.";
+    }
+    if (confirmationSubmitButton) {
+        confirmationSubmitButton.textContent = "Confirmar Pix";
+    }
     document.body.classList.add("list-view");
     floatingHomeButton?.classList.remove("hidden");
     giftSelectionView.classList.remove("hidden");
