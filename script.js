@@ -406,7 +406,7 @@ function renderGiftList() {
             actionButton.textContent = "Pegar";
             actionButton.disabled = false;
             actionButton.dataset.giftId = gift.id;
-            owner.textContent = "Ainda nao reservado";
+            owner.textContent = "Ainda não reservado";
         }
 
         giftGrid.appendChild(card);
