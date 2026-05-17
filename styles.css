@@ -270,10 +270,10 @@ svg {
     border-left: 0;
 }
 
-/* Make both action cards (Lista de Presentes and Confirmar Presença) wider: 95% of page and centered */
-.action-band .action-block {
+/* Make both action cards (Lista de Presentes and Confirmar Presença) wider: 98% of page and centered */
+.action-band > .action-block {
     grid-column: 1 / -1; /* span full grid */
-    width: 95%;
+    width: 98%;
     justify-self: center;
 }
 
@@ -890,8 +890,8 @@ h3 {
     }
 
     /* ensure action cards match gift-card mobile width */
-    .action-band .action-block {
-        width: 90%;
+    .action-band > .action-block {
+        width: 98%;
         margin: 0 auto;
     }
 
