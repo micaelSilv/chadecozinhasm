@@ -792,9 +792,13 @@ h3 {
 
     .hero-grid,
     .action-band,
-    .info-grid,
-    .gift-grid {
+    .info-grid {
         grid-template-columns: 1fr;
+    }
+
+    .gift-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
     }
 
     .hero-grid {
@@ -973,6 +977,10 @@ h3 {
         font-size: 1.28rem;
     }
 
+    .gift-grid {
+        gap: 10px;
+    }
+
     .gift-card,
     .confirmation-card,
     .action-block {
@@ -980,13 +988,26 @@ h3 {
         border-radius: 24px;
     }
 
+    .gift-card {
+        gap: 12px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
     .gift-card-pix {
-        padding: 22px 20px;
-        border-radius: 24px;
+        gap: 14px;
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .gift-card h3,
+    .gift-card-pix h3 {
+        font-size: 1.25rem;
+        line-height: 1.02;
     }
 
     .pix-key-value {
-        font-size: 1.06rem;
+        font-size: 0.96rem;
     }
 
     .info-card {
@@ -1041,13 +1062,28 @@ h3 {
         width: 100%;
     }
 
+    .gift-image-wrap {
+        border-radius: 14px;
+        aspect-ratio: 1 / 0.9;
+    }
+
     .gift-card-top {
         flex-direction: column;
         align-items: start;
+        gap: 8px;
     }
 
     .gift-status {
-        min-height: 32px;
+        min-height: 28px;
+        padding: 0 10px;
+        font-size: 0.64rem;
+    }
+
+    .gift-link,
+    .gift-owner,
+    .gift-detail,
+    .gift-button {
+        font-size: 0.84rem;
     }
 
     .confirmation-card {
