@@ -548,11 +548,23 @@ h3 {
     top: 18px;
     right: 18px;
     margin: 0;
-    padding: 10px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.86);
-    color: var(--text);
+    background: #c94b4b;
+    color: #ffffff;
     cursor: pointer;
+}
+
+.back-button span {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1;
+    transform: translateY(-1px);
 }
 
 .floating-home-button {
