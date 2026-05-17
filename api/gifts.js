@@ -1,4 +1,4 @@
-const { getAllGifts, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("../lib/gifts-store");
+const { getAllGifts, getPixChoices, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("../lib/gifts-store");
 
 module.exports = async (request, response) => {
     if (request.method !== "GET") {
@@ -12,7 +12,8 @@ module.exports = async (request, response) => {
 
     try {
         const gifts = await getAllGifts();
-        return response.status(200).json({ gifts });
+        const pixChoices = await getPixChoices();
+        return response.status(200).json({ gifts, pixChoices });
     } catch (error) {
         const message = error instanceof MissingSupabaseConfigError || error instanceof InvalidSupabaseUrlError
             ? error.message

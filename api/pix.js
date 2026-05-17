@@ -1,4 +1,4 @@
-const { confirmPixChoice, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("../lib/gifts-store");
+const { confirmPixChoice, getPixChoices, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("../lib/gifts-store");
 
 module.exports = async (request, response) => {
     if (request.method !== "POST") {
@@ -14,7 +14,8 @@ module.exports = async (request, response) => {
 
     try {
         await confirmPixChoice({ guestName, guestPhone });
-        return response.status(200).json({ message: "Escolha via Pix confirmada com sucesso." });
+        const pixChoices = await getPixChoices();
+        return response.status(200).json({ message: "Escolha via Pix confirmada com sucesso.", pixChoices });
     } catch (error) {
         const message = error instanceof MissingSupabaseConfigError || error instanceof InvalidSupabaseUrlError
             ? error.message

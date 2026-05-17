@@ -29,6 +29,7 @@ const formFeedback = document.querySelector("#form-feedback");
 let selectedGiftId = null;
 let confirmationMode = "gift";
 let giftItems = [];
+let pixChoices = [];
 const heroImages = [
     "IMGS/Nobanco.jpeg",
     "IMGS/Apoidos_Pilar.jpeg",
@@ -186,6 +187,11 @@ confirmationForm.addEventListener("submit", async (event) => {
             renderGiftList();
         }
 
+        if (confirmationMode === "pix") {
+            pixChoices = payload.pixChoices || pixChoices;
+            renderGiftList();
+        }
+
         confirmationForm.reset();
         setFeedback("success", payload.message || requestOptions.successMessage);
         openGiftSelection();
@@ -290,6 +296,7 @@ async function loadGiftList(showError = true) {
         }
 
         giftItems = payload.gifts;
+        pixChoices = payload.pixChoices || [];
         renderGiftList();
     } catch (error) {
         if (showError) {
@@ -354,7 +361,24 @@ function renderGiftList() {
 }
 
 function createPixCard() {
-    return pixCardTemplate?.content.firstElementChild.cloneNode(true) || null;
+    const pixCard = pixCardTemplate?.content.firstElementChild.cloneNode(true) || null;
+
+    if (!pixCard) {
+        return null;
+    }
+
+    const owner = pixCard.querySelector(".pix-owner");
+
+    if (owner && pixChoices.length > 0) {
+        const chooserNames = pixChoices.slice(0, 3).map((choice) => choice.guestName).join(", ");
+        const extraCount = pixChoices.length - 3;
+        owner.textContent = extraCount > 0
+            ? `Escolhido por ${chooserNames} e mais ${extraCount}`
+            : `Escolhido por ${chooserNames}`;
+        owner.classList.remove("hidden");
+    }
+
+    return pixCard;
 }
 
 function openConfirmationView(giftId) {

@@ -1,6 +1,6 @@
 const express = require("express");
 const os = require("os");
-const { confirmGift, confirmPixChoice, confirmPresence, getAllGifts, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("./lib/gifts-store");
+const { confirmGift, confirmPixChoice, confirmPresence, getAllGifts, getPixChoices, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("./lib/gifts-store");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,7 +12,8 @@ app.use(express.static(__dirname));
 app.get("/api/gifts", async (_request, response) => {
     try {
         const gifts = await getAllGifts();
-        response.json({ gifts });
+        const pixChoices = await getPixChoices();
+        response.json({ gifts, pixChoices });
     } catch (error) {
         response.status(500).json({ message: getErrorMessage(error, "Nao foi possivel carregar a lista de presentes.") });
     }
@@ -69,7 +70,8 @@ app.post("/api/pix", async (request, response) => {
 
     try {
         await confirmPixChoice({ guestName, guestPhone });
-        return response.json({ message: "Escolha via Pix confirmada com sucesso." });
+        const pixChoices = await getPixChoices();
+        return response.json({ message: "Escolha via Pix confirmada com sucesso.", pixChoices });
     } catch (error) {
         return response.status(500).json({ message: getErrorMessage(error, "Nao foi possivel salvar a escolha via Pix.") });
     }
