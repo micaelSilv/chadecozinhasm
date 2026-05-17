@@ -361,15 +361,8 @@ function renderGiftList() {
         giftGrid.appendChild(pixCard);
     }
 
-    let activeCategory = null;
-
-    sortGiftsByCategory(giftItems).forEach((gift) => {
+    giftItems.forEach((gift) => {
         const normalizedCategory = normalizeGiftCategory(gift.category);
-
-        if (normalizedCategory !== activeCategory) {
-            giftGrid.appendChild(createCategoryHeading(normalizedCategory));
-            activeCategory = normalizedCategory;
-        }
 
         const card = giftTemplate.content.firstElementChild.cloneNode(true);
         const image = card.querySelector(".gift-image");
@@ -436,16 +429,6 @@ function createPixCard() {
     }
 
     return pixCard;
-}
-
-function createCategoryHeading(category) {
-    const heading = document.createElement("div");
-    const categoryClassName = getCategoryClassName(category);
-
-    heading.className = `gift-category-heading ${categoryClassName}`;
-    heading.textContent = category;
-
-    return heading;
 }
 
 function openConfirmationView(giftId) {

@@ -448,19 +448,6 @@ h3 {
     gap: 22px;
 }
 
-.gift-category-heading {
-    grid-column: 1 / -1;
-    margin-top: 8px;
-    justify-self: start;
-    padding: 10px 16px;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
 .gift-card-pix {
     position: relative;
     gap: 18px;
@@ -571,9 +558,11 @@ h3 {
 }
 
 .gift-card--prestige {
-    border-width: 2px;
+    position: relative;
+    border-width: 3px;
     border-color: #f0a24a;
-    box-shadow: 0 16px 32px rgba(240, 162, 74, 0.14);
+    box-shadow: 0 18px 38px rgba(240, 162, 74, 0.2);
+    animation: prestigeGlow 2.8s ease-in-out infinite;
 }
 
 .gift-card--prime {
@@ -592,6 +581,16 @@ h3 {
     border-width: 2px;
     border-color: #5fa9ff;
     box-shadow: 0 16px 32px rgba(95, 169, 255, 0.14);
+}
+
+.gift-card--prestige::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 30px;
+    border: 1px solid rgba(240, 162, 74, 0.5);
+    pointer-events: none;
+    animation: prestigePulse 2.8s ease-in-out infinite;
 }
 
 .gift-image-wrap {
@@ -627,24 +626,46 @@ h3 {
     font-weight: 800;
 }
 
-.gift-category-heading.gift-category--prestige,
 .gift-category--prestige {
     background: #f0a24a;
 }
 
-.gift-category-heading.gift-category--prime,
 .gift-category--prime {
     background: #7a3fe0;
 }
 
-.gift-category-heading.gift-category--especial,
 .gift-category--especial {
     background: #00a9c2;
 }
 
-.gift-category-heading.gift-category--essencial,
 .gift-category--essencial {
     background: #5fa9ff;
+}
+
+@keyframes prestigeGlow {
+    0%,
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 18px 38px rgba(240, 162, 74, 0.18);
+    }
+
+    50% {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 46px rgba(240, 162, 74, 0.28);
+    }
+}
+
+@keyframes prestigePulse {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.75;
+        transform: scale(1.012);
+    }
 }
 
 .gift-status {
