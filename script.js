@@ -3,6 +3,8 @@ const giftTemplate = document.querySelector("#gift-card-template");
 const giftSelectionView = document.querySelector("#gift-selection-view");
 const confirmationView = document.querySelector("#confirmation-view");
 const openGiftListButton = document.querySelector("#open-gift-list");
+const heroPhoto = document.querySelector(".hero-photo");
+const heroPhotoDots = Array.from(document.querySelectorAll(".hero-photo-dot"));
 const selectedGiftName = document.querySelector("#selected-gift-name");
 const confirmationForm = document.querySelector("#confirmation-form");
 const guestNameInput = document.querySelector("#guest-name");
@@ -12,6 +14,11 @@ const formFeedback = document.querySelector("#form-feedback");
 
 let selectedGiftId = null;
 let giftItems = [];
+const heroImages = [
+    "IMGS/Nobanco.jpeg",
+    "IMGS/Apoidos_Pilar.jpeg",
+    "IMGS/Retrato.jpeg"
+];
 const giftImageMap = {
     "assadeira-redonda": "lista_presentes_imagens_reais/imagens/01_assadeira_redonda.jpg",
     "assadeira-retangular": "lista_presentes_imagens_reais/imagens/02_assadeira_retangular.jpg",
@@ -72,6 +79,7 @@ const giftImageMap = {
     mop: "lista_presentes_imagens_reais/imagens/57_mop.jpg"
 };
 
+initHeroSlideshow();
 loadGiftList();
 
 openGiftListButton?.addEventListener("click", (event) => {
@@ -220,6 +228,32 @@ function openGiftSelection() {
     selectedGiftId = null;
     confirmationView.classList.add("hidden");
     giftSelectionView.classList.remove("hidden");
+}
+
+function initHeroSlideshow() {
+    if (!heroPhoto || heroImages.length === 0) {
+        return;
+    }
+
+    let activeIndex = 0;
+    updateHeroSlide(activeIndex);
+
+    if (heroImages.length === 1) {
+        return;
+    }
+
+    window.setInterval(() => {
+        activeIndex = (activeIndex + 1) % heroImages.length;
+        updateHeroSlide(activeIndex);
+    }, 2000);
+}
+
+function updateHeroSlide(activeIndex) {
+    heroPhoto.src = heroImages[activeIndex];
+
+    heroPhotoDots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === activeIndex);
+    });
 }
 
 function setFeedback(type, message) {
