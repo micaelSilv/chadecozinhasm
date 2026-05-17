@@ -163,6 +163,22 @@ backButton.addEventListener("click", () => {
     openGiftSelection();
 });
 
+confirmationView?.addEventListener("click", (event) => {
+    if (event.target === confirmationView) {
+        confirmationForm.reset();
+        setFeedback("", "");
+        openGiftSelection();
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !confirmationView.classList.contains("hidden")) {
+        confirmationForm.reset();
+        setFeedback("", "");
+        openGiftSelection();
+    }
+});
+
 async function loadGiftList(showError = true) {
     try {
         const response = await fetch("/api/gifts", {
@@ -244,9 +260,8 @@ function openConfirmationView(giftId) {
     selectedGiftName.textContent = selectedGift.name;
     document.body.classList.add("list-view");
     floatingHomeButton?.classList.remove("hidden");
-    giftSelectionView.classList.add("hidden");
+    giftSelectionView.classList.remove("hidden");
     confirmationView.classList.remove("hidden");
-    guestNameInput.focus();
 }
 
 function openGiftSelection() {
