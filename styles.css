@@ -445,15 +445,17 @@ h3 {
 .gift-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    gap: 14px;
 }
 
 .gift-card-pix {
     position: relative;
-    gap: 18px;
-    border-color: rgba(58, 107, 76, 0.14);
+    gap: 16px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #2f8f4e;
     background: linear-gradient(145deg, #fbfff9 0%, #f2f8ef 58%, #eef5ea 100%);
-    box-shadow: 0 18px 40px rgba(38, 68, 46, 0.08);
+    box-shadow: 0 18px 40px rgba(38, 68, 46, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .pix-card-badge {
@@ -547,8 +549,8 @@ h3 {
 .gift-card {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 24px;
+    gap: 8px;
+    padding: 16px;
     transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -558,11 +560,9 @@ h3 {
 }
 
 .gift-card--prestige {
-    position: relative;
     border-width: 3px;
     border-color: #f0a24a;
     box-shadow: 0 18px 38px rgba(240, 162, 74, 0.2);
-    animation: prestigeGlow 2.8s ease-in-out infinite;
 }
 
 .gift-card--prime {
@@ -583,20 +583,14 @@ h3 {
     box-shadow: 0 16px 32px rgba(95, 169, 255, 0.14);
 }
 
-.gift-card--prestige::after {
-    content: "";
-    position: absolute;
-    inset: -3px;
-    border-radius: 30px;
-    border: 1px solid rgba(240, 162, 74, 0.5);
-    pointer-events: none;
-    animation: prestigePulse 2.8s ease-in-out infinite;
+.gift-card-pix {
+    border: 3px solid #2f8f4e;
 }
 
 .gift-image-wrap {
     margin: 0;
     overflow: hidden;
-    border-radius: 22px;
+    border-radius: 15px;
     aspect-ratio: 1 / 0.82;
     background: var(--surface-muted);
 }
@@ -611,8 +605,13 @@ h3 {
 .gift-card-top {
     display: flex;
     justify-content: space-between;
-    gap: 14px;
+    gap: 8px;
     align-items: start;
+}
+
+.gift-card h3,
+.gift-card-pix h3 {
+    font-size: 1.65rem;
 }
 
 .gift-category {
@@ -640,32 +639,6 @@ h3 {
 
 .gift-category--essencial {
     background: #5fa9ff;
-}
-
-@keyframes prestigeGlow {
-    0%,
-    100% {
-        transform: translateY(0);
-        box-shadow: 0 18px 38px rgba(240, 162, 74, 0.18);
-    }
-
-    50% {
-        transform: translateY(-4px);
-        box-shadow: 0 24px 46px rgba(240, 162, 74, 0.28);
-    }
-}
-
-@keyframes prestigePulse {
-    0%,
-    100% {
-        opacity: 0.35;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.75;
-        transform: scale(1.012);
-    }
 }
 
 .gift-status {
@@ -887,7 +860,7 @@ h3 {
 
     .gift-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
     }
 
     .hero-grid {
@@ -972,7 +945,7 @@ h3 {
     }
 
     .gift-card-pix {
-        padding: 24px 22px;
+        padding: 18px 16px;
     }
 
     .pix-card-main {
@@ -1067,7 +1040,7 @@ h3 {
     }
 
     .gift-grid {
-        gap: 10px;
+        gap: 8px;
     }
 
     .gift-card,
@@ -1078,20 +1051,20 @@ h3 {
     }
 
     .gift-card {
-        gap: 10px;
-        padding: 12px;
+        gap: 8px;
+        padding: 9px;
         border-radius: 18px;
     }
 
     .gift-card-pix {
-        gap: 14px;
-        padding: 16px 14px;
+        gap: 12px;
+        padding: 12px 11px;
         border-radius: 18px;
     }
 
     .gift-card h3,
     .gift-card-pix h3 {
-        font-size: 1.25rem;
+        font-size: 1.18rem;
         line-height: 1.02;
     }
 
