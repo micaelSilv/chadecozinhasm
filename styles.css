@@ -695,12 +695,16 @@ h3 {
         font-size: 1.28rem;
     }
 
-    .info-card,
     .gift-card,
     .confirmation-card,
     .action-block {
         padding: 20px;
         border-radius: 24px;
+    }
+
+    .info-card {
+        padding: 20px;
+        border-radius: 0;
     }
 
     .action-band {
