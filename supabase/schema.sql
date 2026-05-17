@@ -149,7 +149,7 @@ insert into public.gifts (
         null,
         'Conjunto de pratos para o dia a dia e ocasioes especiais.',
         'https://www.mercadolivre.com.br/jogo-6-pratos-rasos-grande-vidro-branco-25cm-restaurante/up/MLBU3503321287?pdp_filters=item_id%3AMLB5832115552&matt_tool=38524122#origin=whatsapp&sid=whatsapp&wid=MLB5832115552',
-        'IMGS/produtos/1.jpeg',
+            'IMGS/produtos/8.jpeg',
         7,
         null,
         null,

@@ -43,7 +43,7 @@ const giftImageMap = {
     "5": "IMGS/produtos/5.jpeg",
     "6": "IMGS/produtos/6.jpeg",
     "7": "IMGS/produtos/7.jpeg",
-    "8": "IMGS/produtos/1.jpeg",
+        "8": "IMGS/produtos/8.jpeg",
     "9": "IMGS/produtos/9.jpeg",
     "10": "IMGS/produtos/10.jpeg",
     "11": "IMGS/produtos/11.jpeg",
