@@ -270,11 +270,8 @@ svg {
     border-left: 0;
 }
 
-/* Make the first action-block (Lista de Presentes) match gift-card sizing */
-.action-band .action-block:first-child {
-    max-width: 560px; /* similar to gift-card max width */
-    width: 100%;
-}
+/* Keep action-blocks equal width (no special-case first-child) */
+/* Removed single-column restriction so both action-blocks share layout */
 
 .action-content {
     display: grid;
@@ -885,8 +882,8 @@ h3 {
         gap: 14px;
     }
 
-    /* ensure the 'Lista de Presentes' action card matches gift-card mobile width */
-    .action-band .action-block:first-child {
+    /* ensure action cards match gift-card mobile width */
+    .action-band .action-block {
         width: 90%;
         margin: 0 auto;
     }
