@@ -369,12 +369,39 @@ body.list-view main {
     scroll-margin-top: 32px;
 }
 
+.gift-section-header {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 30px;
+    padding: 28px 30px;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, #fffcf7 0%, #f7f2ea 100%);
+    box-shadow: var(--shadow-soft);
+}
+
 .section-heading {
     display: flex;
     justify-content: space-between;
     align-items: end;
     gap: 18px;
-    margin: 10px 0 28px;
+    margin: 0;
+}
+
+.section-heading-copy {
+    display: grid;
+    gap: 10px;
+}
+
+.section-note {
+    margin: 0;
+    align-self: center;
+    max-width: 28ch;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
 }
 
 h2,
@@ -681,6 +708,14 @@ h3 {
     .section-heading {
         flex-direction: column;
         align-items: start;
+    }
+
+    .gift-section-header {
+        padding: 24px 22px;
+    }
+
+    .section-note {
+        max-width: none;
     }
 
     .confirmation-section {
