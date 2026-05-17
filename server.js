@@ -1,6 +1,6 @@
 const express = require("express");
 const os = require("os");
-const { confirmGift, getAllGifts, MissingSupabaseConfigError } = require("./lib/gifts-store");
+const { confirmGift, confirmPresence, getAllGifts, InvalidSupabaseUrlError, MissingSupabaseConfigError } = require("./lib/gifts-store");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -45,6 +45,21 @@ app.post("/api/confirm", async (request, response) => {
     }
 });
 
+app.post("/api/presence", async (request, response) => {
+    const { guestName, guestPhone } = request.body;
+
+    if (!guestName || !guestPhone) {
+        return response.status(400).json({ message: "Preencha nome e celular para confirmar a presenca." });
+    }
+
+    try {
+        await confirmPresence({ guestName, guestPhone });
+        return response.json({ message: "Presenca confirmada com sucesso." });
+    } catch (error) {
+        return response.status(500).json({ message: getErrorMessage(error, "Nao foi possivel salvar a confirmacao de presenca.") });
+    }
+});
+
 app.listen(port, host, () => {
     console.log(`Cha de cozinha disponivel em http://localhost:${port}`);
 
@@ -75,7 +90,7 @@ function getNetworkAddresses() {
 }
 
 function getErrorMessage(error, fallbackMessage) {
-    if (error instanceof MissingSupabaseConfigError) {
+    if (error instanceof MissingSupabaseConfigError || error instanceof InvalidSupabaseUrlError) {
         return error.message;
     }
 
