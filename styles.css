@@ -375,7 +375,7 @@ body.list-view main {
     margin-bottom: 30px;
     padding: 28px 30px;
     border: 1px solid var(--border);
-    background: linear-gradient(180deg, #fffcf7 0%, #f7f2ea 100%);
+    background: #ffffff;
     box-shadow: var(--shadow-soft);
 }
 
