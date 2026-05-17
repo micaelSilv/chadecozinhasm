@@ -544,20 +544,34 @@ h3 {
     }
 
     .hero-grid {
-        gap: 28px;
+        gap: 0;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: var(--surface-soft);
+        box-shadow: var(--shadow-soft);
     }
 
     .hero-photo-shell {
-        max-width: 420px;
-        margin: 0 auto;
+        max-width: none;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
     }
 
     .hero-copy {
-        gap: 22px;
+        gap: 0;
         padding-top: 0;
     }
 
     .hero-intro-card {
+        border: 0;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
         padding: 22px;
     }
 
@@ -579,6 +593,7 @@ h3 {
 
     .info-card {
         min-height: 0;
+        box-shadow: none;
     }
 
     .action-block + .action-block {
