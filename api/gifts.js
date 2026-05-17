@@ -6,6 +6,10 @@ module.exports = async (request, response) => {
         return response.status(405).json({ message: "Metodo nao permitido." });
     }
 
+    response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+    response.setHeader("Pragma", "no-cache");
+    response.setHeader("Expires", "0");
+
     try {
         const gifts = await getAllGifts();
         return response.status(200).json({ gifts });

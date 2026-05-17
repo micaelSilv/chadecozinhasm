@@ -165,7 +165,9 @@ backButton.addEventListener("click", () => {
 
 async function loadGiftList(showError = true) {
     try {
-        const response = await fetch("/api/gifts");
+        const response = await fetch("/api/gifts", {
+            cache: "no-store"
+        });
         const payload = await response.json();
 
         if (!response.ok) {
