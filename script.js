@@ -206,6 +206,7 @@ function renderGiftList() {
         giftName.textContent = gift.name;
         giftDetail.textContent = gift.detail;
         giftLink.href = gift.purchaseLink || "#";
+        giftLink.classList.remove("available");
         giftLink.classList.toggle("is-placeholder", !gift.purchaseLink);
         giftLink.addEventListener("click", (event) => {
             if (!gift.purchaseLink) {
@@ -224,6 +225,7 @@ function renderGiftList() {
         } else {
             status.textContent = "Disponível";
             status.classList.add("available");
+            giftLink.classList.add("available");
             actionButton.textContent = "Pegar";
             actionButton.dataset.giftId = gift.id;
         }

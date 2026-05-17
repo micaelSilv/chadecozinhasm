@@ -511,6 +511,10 @@ h3 {
     text-underline-offset: 3px;
 }
 
+.gift-link.available {
+    color: #2f8f4e;
+}
+
 .gift-link.is-placeholder {
     opacity: 0.86;
 }
