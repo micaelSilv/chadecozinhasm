@@ -24,6 +24,7 @@ const formFeedback = document.querySelector("#form-feedback");
 
 let selectedGiftId = null;
 let giftItems = [];
+let presenceCloseTimeoutId = null;
 const heroImages = [
     "IMGS/Nobanco.jpeg",
     "IMGS/Apoidos_Pilar.jpeg",
@@ -175,8 +176,7 @@ closeConfirmationModalButton?.addEventListener("click", () => {
 });
 
 closePresenceModalButton?.addEventListener("click", () => {
-    presenceForm?.reset();
-    setPresenceFeedback("", "");
+    resetPresenceView();
     closePresenceView();
 });
 
@@ -212,6 +212,11 @@ presenceForm?.addEventListener("submit", async (event) => {
 
         presenceForm.reset();
         setPresenceFeedback("success", payload.message || "Presenca confirmada com sucesso.");
+        clearTimeout(presenceCloseTimeoutId);
+        presenceCloseTimeoutId = window.setTimeout(() => {
+            resetPresenceView();
+            closePresenceView();
+        }, 1200);
     } catch (error) {
         setPresenceFeedback("error", error.message);
     }
@@ -227,8 +232,7 @@ confirmationView?.addEventListener("click", (event) => {
 
 presenceView?.addEventListener("click", (event) => {
     if (event.target === presenceView) {
-        presenceForm?.reset();
-        setPresenceFeedback("", "");
+        resetPresenceView();
         closePresenceView();
     }
 });
@@ -242,8 +246,7 @@ document.addEventListener("keydown", (event) => {
     }
 
     if (event.key === "Escape" && presenceView && !presenceView.classList.contains("hidden")) {
-        presenceForm?.reset();
-        setPresenceFeedback("", "");
+        resetPresenceView();
         closePresenceView();
     }
 });
@@ -347,8 +350,7 @@ function openMainView() {
     selectedGiftId = null;
     setFeedback("", "");
     confirmationForm.reset();
-    presenceForm?.reset();
-    setPresenceFeedback("", "");
+    resetPresenceView();
     document.body.classList.remove("list-view");
     floatingHomeButton?.classList.add("hidden");
     confirmationView.classList.add("hidden");
@@ -359,8 +361,7 @@ function openMainView() {
 }
 
 function openPresenceView() {
-    presenceForm?.reset();
-    setPresenceFeedback("", "");
+    resetPresenceView();
     presenceView?.classList.remove("hidden");
     syncModalState();
 }
@@ -436,6 +437,12 @@ function setPresenceFeedback(type, message) {
     }
 
     presenceFeedback.classList.add(type);
+}
+
+function resetPresenceView() {
+    clearTimeout(presenceCloseTimeoutId);
+    presenceForm?.reset();
+    setPresenceFeedback("", "");
 }
 
 function getGiftImage(gift) {
