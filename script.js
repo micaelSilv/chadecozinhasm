@@ -1,5 +1,6 @@
 const giftGrid = document.querySelector("#gift-grid");
 const giftTemplate = document.querySelector("#gift-card-template");
+const pixCardTemplate = document.querySelector("#pix-card-template");
 const giftSelectionView = document.querySelector("#gift-selection-view");
 const confirmationView = document.querySelector("#confirmation-view");
 const openGiftListButton = document.querySelector("#open-gift-list");
@@ -24,7 +25,6 @@ const formFeedback = document.querySelector("#form-feedback");
 
 let selectedGiftId = null;
 let giftItems = [];
-let presenceCloseTimeoutId = null;
 const heroImages = [
     "IMGS/Nobanco.jpeg",
     "IMGS/Apoidos_Pilar.jpeg",
@@ -176,7 +176,8 @@ closeConfirmationModalButton?.addEventListener("click", () => {
 });
 
 closePresenceModalButton?.addEventListener("click", () => {
-    resetPresenceView();
+    presenceForm?.reset();
+    setPresenceFeedback("", "");
     closePresenceView();
 });
 
@@ -212,11 +213,6 @@ presenceForm?.addEventListener("submit", async (event) => {
 
         presenceForm.reset();
         setPresenceFeedback("success", payload.message || "Presenca confirmada com sucesso.");
-        clearTimeout(presenceCloseTimeoutId);
-        presenceCloseTimeoutId = window.setTimeout(() => {
-            resetPresenceView();
-            closePresenceView();
-        }, 1200);
     } catch (error) {
         setPresenceFeedback("error", error.message);
     }
@@ -232,7 +228,8 @@ confirmationView?.addEventListener("click", (event) => {
 
 presenceView?.addEventListener("click", (event) => {
     if (event.target === presenceView) {
-        resetPresenceView();
+        presenceForm?.reset();
+        setPresenceFeedback("", "");
         closePresenceView();
     }
 });
@@ -246,7 +243,8 @@ document.addEventListener("keydown", (event) => {
     }
 
     if (event.key === "Escape" && presenceView && !presenceView.classList.contains("hidden")) {
-        resetPresenceView();
+        presenceForm?.reset();
+        setPresenceFeedback("", "");
         closePresenceView();
     }
 });
@@ -273,6 +271,12 @@ async function loadGiftList(showError = true) {
 
 function renderGiftList() {
     giftGrid.innerHTML = "";
+
+    const pixCard = createPixCard();
+
+    if (pixCard) {
+        giftGrid.appendChild(pixCard);
+    }
 
     giftItems.forEach((gift) => {
         const card = giftTemplate.content.firstElementChild.cloneNode(true);
@@ -320,6 +324,10 @@ function renderGiftList() {
     });
 }
 
+function createPixCard() {
+    return pixCardTemplate?.content.firstElementChild.cloneNode(true) || null;
+}
+
 function openConfirmationView(giftId) {
     const selectedGift = giftItems.find((gift) => gift.id === giftId);
 
@@ -350,7 +358,8 @@ function openMainView() {
     selectedGiftId = null;
     setFeedback("", "");
     confirmationForm.reset();
-    resetPresenceView();
+    presenceForm?.reset();
+    setPresenceFeedback("", "");
     document.body.classList.remove("list-view");
     floatingHomeButton?.classList.add("hidden");
     confirmationView.classList.add("hidden");
@@ -361,7 +370,8 @@ function openMainView() {
 }
 
 function openPresenceView() {
-    resetPresenceView();
+    presenceForm?.reset();
+    setPresenceFeedback("", "");
     presenceView?.classList.remove("hidden");
     syncModalState();
 }
@@ -437,12 +447,6 @@ function setPresenceFeedback(type, message) {
     }
 
     presenceFeedback.classList.add(type);
-}
-
-function resetPresenceView() {
-    clearTimeout(presenceCloseTimeoutId);
-    presenceForm?.reset();
-    setPresenceFeedback("", "");
 }
 
 function getGiftImage(gift) {
