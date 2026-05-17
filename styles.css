@@ -621,7 +621,7 @@ h3 {
 
 .gift-card h3,
 .gift-card-pix h3 {
-    font-size: 1.9rem; /* aumentado para destacar o título do item */
+    font-size: 2.4rem; /* aumentado para destacar o título do item */
 }
 
 .gift-category {
@@ -1094,7 +1094,7 @@ h3 {
 
     .gift-card h3,
     .gift-card-pix h3 {
-        font-size: 1.22rem; /* aumentado para melhor legibilidade em breakpoints menores */
+        font-size: 1.4rem; /* aumentado para melhor legibilidade em breakpoints menores */
         line-height: 1.02;
     }
 
