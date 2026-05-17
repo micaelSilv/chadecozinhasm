@@ -874,7 +874,7 @@ h3 {
     }
 
     .gift-grid {
-        grid-template-columns: 70%; /* cards ocupam 70% da largura no mobile */
+        grid-template-columns: 80%; /* cards ocupam 80% da largura no mobile */
         justify-content: center;
         gap: 14px;
     }
