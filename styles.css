@@ -597,22 +597,30 @@ h3 {
 
 @media (min-width: 901px) {
     .page-shell {
-        width: 100%;
-        margin: 0;
-        padding-top: 0;
+        width: min(1240px, calc(100% - 48px));
+        margin: 0 auto;
+        padding-top: 24px;
     }
 
     .hero-grid {
         grid-template-columns: minmax(340px, 38vw) minmax(0, 1fr);
         align-items: stretch;
         gap: 0;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        background: var(--surface-soft);
+        box-shadow: var(--shadow);
     }
 
     .hero-photo-shell {
         height: 100%;
+        border: 0;
         border-radius: 0;
         aspect-ratio: auto;
         min-height: 0;
+        background: transparent;
+        box-shadow: none;
     }
 
     .hero-copy {
@@ -623,12 +631,20 @@ h3 {
 
     .hero-intro-card {
         padding: 40px 44px;
+        border: 0;
+        border-bottom: 1px solid var(--border);
         border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .info-card {
+        box-shadow: none;
     }
 
     main {
-        width: min(1240px, calc(100% - 48px));
-        margin: 0 auto;
+        width: 100%;
+        margin: 0;
     }
 }
 
