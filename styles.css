@@ -475,8 +475,8 @@ h3 {
 
 .pix-card-main {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) 180px;
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 18px;
     align-items: center;
 }
 
@@ -518,38 +518,6 @@ h3 {
     line-height: 1.5;
 }
 
-.pix-qr-panel {
-    display: grid;
-    gap: 10px;
-    justify-items: center;
-}
-
-.pix-qr-frame {
-    display: grid;
-    place-items: center;
-    width: 180px;
-    aspect-ratio: 1;
-    padding: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 24px;
-    background: #ffffff;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-}
-
-.pix-qr-svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.pix-qr-caption {
-    margin: 0;
-    color: #5b665a;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    text-align: center;
-}
-
 .pix-key-card {
     display: grid;
     gap: 6px;
@@ -585,14 +553,6 @@ h3 {
 .gift-card {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    padding: 24px;
-    transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-.gift-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
 }
 
 .gift-image-wrap {
@@ -1021,10 +981,6 @@ h3 {
     .gift-card-pix {
         padding: 22px 20px;
         border-radius: 24px;
-    }
-
-    .pix-qr-frame {
-        width: min(100%, 170px);
     }
 
     .pix-key-value {
