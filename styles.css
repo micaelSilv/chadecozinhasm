@@ -872,8 +872,9 @@ h3 {
     }
 
     .gift-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: 70%; /* cards ocupam 70% da largura no mobile */
+        justify-content: center;
+        gap: 14px;
     }
 
     .hero-grid {
@@ -893,9 +894,9 @@ h3 {
     /* Card sizing/layout tweaks for mobile: diminuir visual dos cards e centrar com margens */
     .gift-card {
         padding: 8px 10px; /* menor padding para cards mais compactos */
-        width: calc(100% - 28px); /* deixar o card menor que a tela para margens laterais */
-        max-width: 560px;
-        margin: 0 auto; /* centraliza o card */
+        width: 100%; /* ocupa toda a coluna (que é 70% do viewport) */
+        max-width: none;
+        margin: 0;
         box-sizing: border-box;
     }
 
