@@ -36,6 +36,10 @@ const heroImages = [
     "IMGS/Retrato.jpeg"
 ];
 const giftImageMap = {
+    "01": "IMGS/produtos/1.jpeg",
+    "02": "IMGS/produtos/2.jpeg",
+    "03": "IMGS/produtos/3.jpeg",
+    "04": "IMGS/produtos/4.jpeg",
     "assadeira-redonda": "lista_presentes_imagens_reais/imagens/01_assadeira_redonda.jpg",
     "assadeira-retangular": "lista_presentes_imagens_reais/imagens/02_assadeira_retangular.jpg",
     "assadeira-pudim": "lista_presentes_imagens_reais/imagens/03_assadeira_pudim.jpg",
