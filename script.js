@@ -324,11 +324,8 @@ function renderGiftList() {
         const actionButton = card.querySelector(".gift-button");
         const owner = card.querySelector(".gift-owner");
 
-        image.src = getGiftImage(gift);
+        setGiftImage(image, gift);
         image.alt = gift.name;
-        image.addEventListener("error", () => {
-            image.src = "IMGS/Apoidos_Pilar.jpeg";
-        }, { once: true });
         giftName.textContent = gift.name;
         giftDetail.textContent = gift.detail;
         giftLink.href = gift.purchaseLink || "#";
@@ -533,6 +530,48 @@ function setPresenceFeedback(type, message) {
     presenceFeedback.classList.add(type);
 }
 
-function getGiftImage(gift) {
-    return giftImageMap[gift.id] || gift.image || "IMGS/Apoidos_Pilar.jpeg";
+function setGiftImage(imageElement, gift) {
+    const candidates = getGiftImageCandidates(gift);
+    const fallbackImage = "/IMGS/Apoidos_Pilar.jpeg";
+    let currentIndex = 0;
+
+    const applyNextImage = () => {
+        if (currentIndex >= candidates.length) {
+            imageElement.removeEventListener("error", applyNextImage);
+            imageElement.src = fallbackImage;
+            return;
+        }
+
+        imageElement.src = candidates[currentIndex];
+        currentIndex += 1;
+    };
+
+    imageElement.addEventListener("error", applyNextImage);
+    applyNextImage();
+}
+
+function getGiftImageCandidates(gift) {
+    const rawImage = giftImageMap[gift.id] || gift.image || "IMGS/Apoidos_Pilar.jpeg";
+    const normalizedImage = normalizeImagePath(rawImage);
+    const candidates = [normalizedImage];
+
+    if (normalizedImage.endsWith(".jpg")) {
+        candidates.push(normalizedImage.replace(/\.jpg$/i, ".jpeg"));
+    }
+
+    if (normalizedImage.endsWith(".jpeg")) {
+        candidates.push(normalizedImage.replace(/\.jpeg$/i, ".jpg"));
+    }
+
+    return [...new Set(candidates)];
+}
+
+function normalizeImagePath(imagePath) {
+    const normalizedPath = String(imagePath || "")
+        .trim()
+        .replace(/\\/g, "/")
+        .replace(/^\.\//, "")
+        .replace(/^\/+/, "");
+
+    return `/${normalizedPath}`;
 }
