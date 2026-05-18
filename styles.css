@@ -510,6 +510,13 @@ h3 {
     text-transform: uppercase;
 }
 
+/* Aviso em vermelho apenas no cartão Pix */
+.gift-card-pix .pix-copy h3,
+.gift-card-pix .pix-copy .gift-detail,
+.gift-card-pix .pix-copy .pix-warning {
+    color: #b00020;
+}
+
 .pix-proof {
     display: flex;
     align-items: center;
