@@ -440,6 +440,36 @@ body.list-view main {
     line-height: 1.6;
 }
 
+/* Paleta de cores no cabeçalho da lista de presentes */
+.color-palette {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+.palette-label {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+}
+.palette-swatches {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.12);
+}
+.swatch-black { background: #000; }
+.swatch-gray { background: #9e9e9e; }
+.swatch-white { background: #fff; border: 1px solid #d0d0d0; }
+
 h2,
 h3 {
     margin: 0;
