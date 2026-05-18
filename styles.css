@@ -511,11 +511,7 @@ h3 {
 }
 
 /* Aviso em vermelho apenas no cartão Pix */
-.gift-card-pix .pix-copy h3,
-.gift-card-pix .pix-copy .gift-detail,
-.gift-card-pix .pix-copy .pix-warning {
-    color: #b00020;
-}
+/* aviso pix removido */
 
 .pix-proof {
     display: flex;
